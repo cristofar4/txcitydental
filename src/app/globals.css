@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  Texas City Dental — Luxury Design System (Tailwind v4 CSS-first)   */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  /* Brand azure — trustworthy, modern healthcare blue */
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dcebfe;
+  --color-brand-200: #bedcfd;
+  --color-brand-300: #91c5fb;
+  --color-brand-400: #5ea5f6;
+  --color-brand-500: #3884ef;
+  --color-brand-600: #2167d6;
+  --color-brand-700: #1c52b0;
+  --color-brand-800: #1c478f;
+  --color-brand-900: #1c3d76;
+  --color-brand-950: #132646;
+
+  /* Deep navies for dark sections, headings, footer */
+  --color-ink: #0b1f3a;
+  --color-midnight: #07152b;
+
+  /* Champagne gold — restrained luxury accent */
+  --color-gold-200: #f1e6c6;
+  --color-gold-300: #e7d4a0;
+  --color-gold-400: #d9bf7c;
+  --color-gold-500: #c9a85f;
+  --color-gold-600: #ad8c45;
+
+  /* Soft surfaces */
+  --color-mist: #f4f8ff;
+  --color-cloud: #fbfcff;
+
+  /* Luxury shadows */
+  --shadow-soft: 0 2px 10px -3px rgb(11 31 58 / 0.08);
+  --shadow-card: 0 18px 40px -22px rgb(11 31 58 / 0.28);
+  --shadow-lift: 0 30px 60px -28px rgb(11 31 58 / 0.35);
+  --shadow-glow: 0 0 0 1px rgb(33 103 214 / 0.08), 0 24px 60px -24px rgb(33 103 214 / 0.45);
+
+  /* Custom radii */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.75rem;
+
+  /* Motion tokens → animate-* utilities */
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-blob: blob 18s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.6s linear infinite;
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-spin-slow: spin 24s linear infinite;
+  --animate-pulse-ring: pulse-ring 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Map next/font CSS variables onto the type scale */
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+/* ------------------------------- base ----------------------------- */
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: color-mix(in oklab, var(--color-brand-950) 8%, transparent);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-cloud);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-brand-500) 25%, transparent);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-600);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ---------------------------- utilities --------------------------- */
+@layer utilities {
+  /* Gradient display text */
+  .text-gradient {
+    background-image: linear-gradient(
+      120deg,
+      var(--color-brand-700),
+      var(--color-brand-500) 55%,
+      var(--color-brand-400)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-gold {
+    background-image: linear-gradient(
+      110deg,
+      var(--color-gold-500),
+      var(--color-gold-300) 50%,
+      var(--color-gold-500)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Frosted glass surface */
+  .glass {
+    background-color: color-mix(in oklab, white 72%, transparent);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+
+  .glass-dark {
+    background-color: color-mix(in oklab, var(--color-midnight) 55%, transparent);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+
+  /* Subtle dotted/grid backdrops */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, var(--color-brand-900) 6%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--color-brand-900) 6%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(
+      color-mix(in oklab, var(--color-brand-700) 14%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Animated brand mesh used behind hero / CTA bands */
+  .bg-mesh {
+    background-color: var(--color-brand-950);
+    background-image:
+      radial-gradient(at 18% 22%, color-mix(in oklab, var(--color-brand-500) 55%, transparent) 0px, transparent 45%),
+      radial-gradient(at 82% 12%, color-mix(in oklab, var(--color-brand-400) 45%, transparent) 0px, transparent 40%),
+      radial-gradient(at 72% 88%, color-mix(in oklab, var(--color-gold-500) 28%, transparent) 0px, transparent 45%),
+      radial-gradient(at 25% 85%, color-mix(in oklab, var(--color-brand-700) 60%, transparent) 0px, transparent 50%);
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent);
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
+
+  /* Shimmer sweep for "premium" surfaces and skeletons */
+  .shimmer {
+    background-image: linear-gradient(
+      110deg,
+      transparent 30%,
+      color-mix(in oklab, white 45%, transparent) 50%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+  }
+
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ---------------------------- keyframes --------------------------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes blob {
+  0%, 100% { border-radius: 42% 58% 63% 37% / 42% 42% 58% 58%; transform: translate(0, 0) rotate(0deg); }
+  33% { border-radius: 58% 42% 38% 62% / 56% 38% 62% 44%; transform: translate(12px, -10px) rotate(8deg); }
+  66% { border-radius: 38% 62% 56% 44% / 40% 62% 38% 60%; transform: translate(-10px, 8px) rotate(-6deg); }
+}
+
+@keyframes shimmer {
+  to { background-position: -200% 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-brand-500) 45%, transparent); }
+  70% { box-shadow: 0 0 0 16px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
