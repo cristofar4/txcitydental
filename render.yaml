@@ -1,0 +1,21 @@
+# Render Blueprint — deploys Texas City Dental as a Node web service.
+# One-click: in the Render dashboard → "New +" → "Blueprint" → connect this repo.
+# Blueprint spec: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: texas-city-dental
+    runtime: node
+    plan: free
+    # Branch to deploy. Change this if you merge the site into main/master.
+    branch: claude/focused-bohr-wujDP
+    autoDeploy: true
+    # npm ci uses the committed package-lock.json for a reproducible install.
+    buildCommand: npm ci && npm run build
+    # Render injects $PORT; bind Next.js to it explicitly.
+    startCommand: npm run start -- -p $PORT
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22.22.2"
+      - key: NODE_ENV
+        value: production
