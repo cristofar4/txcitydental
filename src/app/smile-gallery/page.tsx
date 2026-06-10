@@ -29,7 +29,7 @@ export default function SmileGalleryPage() {
         title={
           <>
             Before &amp; after:{" "}
-            <span className="text-gradient">smiles transformed</span>
+            <span className="text-gradient-electric">smiles transformed</span>
           </>
         }
         lead="Slide through real transformations crafted by our team. From subtle refinements to complete makeovers — see what's possible for your smile."

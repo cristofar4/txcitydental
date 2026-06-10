@@ -22,7 +22,7 @@ export default function ContactPage() {
         breadcrumb="Contact"
         title={
           <>
-            We&apos;d love to <span className="text-gradient">hear from you</span>
+            We&apos;d love to <span className="text-gradient-electric">hear from you</span>
           </>
         }
         lead="Questions, appointments, or just saying hello — our friendly team is here to help. Reach out and we'll get right back to you."

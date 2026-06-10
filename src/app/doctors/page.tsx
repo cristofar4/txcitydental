@@ -30,7 +30,7 @@ export default function DoctorsPage() {
         title={
           <>
             The caring experts behind{" "}
-            <span className="text-gradient">your smile</span>
+            <span className="text-gradient-electric">your smile</span>
           </>
         }
         lead="Three dedicated dentists, one shared philosophy: exceptional, gentle care that treats you like family. Get to know the people you'll trust with your smile."

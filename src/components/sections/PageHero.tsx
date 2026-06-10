@@ -3,10 +3,9 @@ import { ChevronRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 
-/** Shared hero for interior pages — clears the fixed header and sets the tone. */
+/** Shared dark aurora hero for interior pages — clears the floating header. */
 export function PageHero({
   eyebrow,
   title,
@@ -23,27 +22,19 @@ export function PageHero({
   className?: string;
 }) {
   return (
-    <section
-      className={cn(
-        "relative overflow-hidden bg-gradient-to-b from-mist to-cloud pb-16 pt-32 sm:pb-20 lg:pt-44",
-        className,
-      )}
-    >
-      {/* decorative field */}
-      <div className="pointer-events-none absolute inset-0 bg-dots opacity-60 mask-fade-b" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-24 -top-10 h-80 w-80 rounded-full bg-brand-200/40 blur-3xl" aria-hidden="true" />
-      <div className="pointer-events-none absolute -left-20 top-24 h-72 w-72 rounded-full bg-gold-200/40 blur-3xl" aria-hidden="true" />
+    <section className={cn("noise relative isolate overflow-hidden bg-aurora animate-aurora pb-20 pt-32 lg:pb-24 lg:pt-44", className)}>
+      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50 mask-fade-b" aria-hidden="true" />
+      <div className="pointer-events-none absolute -right-20 top-10 h-80 w-80 rounded-full bg-electric-500/25 blur-[110px] animate-glow" aria-hidden="true" />
+      <div className="pointer-events-none absolute -left-20 top-28 h-80 w-80 rounded-full bg-iris-500/25 blur-[120px] animate-glow [animation-delay:1.5s]" aria-hidden="true" />
 
       <Container className="relative">
-        <Reveal>
-          <nav aria-label="Breadcrumb" className="mb-6 flex items-center justify-center gap-1.5 text-xs font-medium text-slate-500">
-            <Link href="/" className="transition-colors hover:text-brand-700">
-              Home
-            </Link>
+        <Reveal y={0}>
+          <nav aria-label="Breadcrumb" className="mb-7 flex items-center justify-center gap-1.5 text-xs font-medium text-brand-100/60">
+            <Link href="/" className="transition-colors hover:text-white">Home</Link>
             {breadcrumb && (
               <>
                 <ChevronRight className="h-3.5 w-3.5" />
-                <span className="text-brand-700">{breadcrumb}</span>
+                <span className="text-electric-300">{breadcrumb}</span>
               </>
             )}
           </nav>
@@ -51,25 +42,26 @@ export function PageHero({
 
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           {eyebrow && (
-            <Reveal>
-              <Eyebrow>{eyebrow}</Eyebrow>
+            <Reveal y={0}>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-brand-100 backdrop-blur">
+                <span className="h-1.5 w-1.5 rounded-full bg-electric-400" />
+                {eyebrow}
+              </span>
             </Reveal>
           )}
-          <Reveal delay={0.05}>
-            <h1 className="mt-5 text-balance text-4xl leading-[1.08] text-ink sm:text-5xl lg:text-[3.6rem]">
+          <Reveal delay={0.08}>
+            <h1 className="mt-6 text-balance text-4xl leading-[1.06] text-white sm:text-5xl lg:text-[3.7rem]">
               {title}
             </h1>
           </Reveal>
           {lead && (
-            <Reveal delay={0.1}>
-              <p className="mt-5 text-pretty text-lg leading-relaxed text-slate-600">
-                {lead}
-              </p>
+            <Reveal delay={0.16}>
+              <p className="mt-5 text-pretty text-lg leading-relaxed text-brand-100/80">{lead}</p>
             </Reveal>
           )}
           {children && (
-            <Reveal delay={0.15}>
-              <div className="mt-8">{children}</div>
+            <Reveal delay={0.24}>
+              <div className="mt-9">{children}</div>
             </Reveal>
           )}
         </div>

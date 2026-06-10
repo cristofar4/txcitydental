@@ -29,7 +29,7 @@ export default function AppointmentPage() {
         title={
           <>
             Reserve your visit in{" "}
-            <span className="text-gradient">under a minute</span>
+            <span className="text-gradient-electric">under a minute</span>
           </>
         }
         lead="Tell us a little about what you need and when works best. We'll call to confirm your appointment — no charge, no obligation."

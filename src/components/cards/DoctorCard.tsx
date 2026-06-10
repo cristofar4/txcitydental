@@ -1,8 +1,9 @@
-import Image from "next/image";
 import { GraduationCap, Sparkles, Quote } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { Photo } from "@/components/media/Photo";
 import { DoctorPortrait } from "@/components/art/Portrait";
+import { getDoctorPhoto } from "@/lib/images";
 import type { Doctor } from "@/lib/data/doctors";
 
 export function DoctorCard({
@@ -17,29 +18,25 @@ export function DoctorCard({
   return (
     <article
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-card transition-all duration-500",
-        !full && "hover:-translate-y-1.5 hover:shadow-lift",
+        "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-card transition-all duration-500",
+        !full && "hover:-translate-y-2 hover:shadow-lift",
       )}
     >
       {/* portrait */}
       <div className="relative aspect-[4/5] overflow-hidden">
-        {doctor.photo ? (
-          <Image
-            src={doctor.photo}
-            alt={`Portrait of ${doctor.name}`}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width:768px) 100vw, 33vw"
-          />
-        ) : (
-          <DoctorPortrait initials={doctor.initials} accent={doctor.accent} />
-        )}
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent p-5">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-white backdrop-blur">
-            <Sparkles className="h-3.5 w-3.5 text-gold-300" />
-            {doctor.yearsExperience}+ years experience
-          </span>
-        </div>
+        <Photo
+          src={doctor.photo ?? getDoctorPhoto(doctor.slug)}
+          alt={`Portrait of ${doctor.name}, ${doctor.role}`}
+          sizes="(max-width:768px) 100vw, 33vw"
+          overlay="bottom"
+          zoom
+          fallback={<DoctorPortrait initials={doctor.initials} accent={doctor.accent} />}
+          className="absolute inset-0 h-full w-full"
+        />
+        <span className="absolute bottom-5 left-5 z-10 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-white ring-1 ring-white/20 backdrop-blur">
+          <Sparkles className="h-3.5 w-3.5 text-gold-300" />
+          {doctor.yearsExperience}+ years experience
+        </span>
       </div>
 
       {/* body */}
@@ -54,10 +51,7 @@ export function DoctorCard({
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           {doctor.specialties.map((s) => (
-            <span
-              key={s}
-              className="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700"
-            >
+            <span key={s} className="rounded-full bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700">
               {s}
             </span>
           ))}
@@ -93,12 +87,7 @@ export function DoctorCard({
         )}
 
         <div className="mt-auto pt-6">
-          <Button
-            href={`/appointment?doctor=${doctor.slug}`}
-            variant="secondary"
-            size="sm"
-            className="w-full"
-          >
+          <Button href={`/appointment?doctor=${doctor.slug}`} variant="secondary" size="sm" className="w-full">
             Book with {doctor.name.split(" ").slice(0, 2).join(" ")}
           </Button>
         </div>

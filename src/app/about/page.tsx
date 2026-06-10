@@ -8,8 +8,9 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Stats } from "@/components/home/Stats";
 import { DoctorCard } from "@/components/cards/DoctorCard";
-import { SmileArt } from "@/components/art/SmileArt";
+import { Photo } from "@/components/media/Photo";
 import { doctors } from "@/lib/data/doctors";
+import { photos } from "@/lib/images";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function AboutPage() {
         title={
           <>
             Redefining the dental experience in{" "}
-            <span className="text-gradient">Texas City</span>
+            <span className="text-gradient-electric">Texas City</span>
           </>
         }
         lead="We believe going to the dentist should feel calm, caring, and even a little luxurious. Here's the story — and the people — behind that promise."
@@ -48,13 +49,17 @@ export default function AboutPage() {
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <Reveal>
-              <div className="relative mx-auto max-w-md">
-                <div className="absolute -inset-4 rounded-[2.75rem] bg-gradient-to-br from-brand-100/60 to-gold-200/40 blur-xl" aria-hidden="true" />
-                <div className="relative overflow-hidden rounded-[2.25rem] bg-white p-3 shadow-lift ring-1 ring-slate-100">
-                  <div className="overflow-hidden rounded-[1.85rem]">
-                    <SmileArt variant={{ shade: 0.95, straightness: 1, gap: 0, chips: false }} uid="about" className="aspect-[4/5] w-full" />
-                  </div>
-                </div>
+              <div className="group relative mx-auto max-w-md">
+                <div className="absolute -inset-4 rounded-[2.75rem] bg-gradient-to-br from-electric-400/25 to-iris-500/25 blur-xl" aria-hidden="true" />
+                <Photo
+                  src={photos.clinicInterior}
+                  alt="The bright, modern interior of Texas City Dental"
+                  sizes="(max-width:1024px) 90vw, 40vw"
+                  overlay="soft"
+                  zoom
+                  fallbackAccent="ocean"
+                  className="relative aspect-[4/5] w-full rounded-[2.25rem] shadow-lift ring-1 ring-white/10"
+                />
                 <div className="absolute -bottom-5 -left-3 animate-float rounded-2xl bg-white px-4 py-3 shadow-card ring-1 ring-slate-100 sm:-left-6">
                   <p className="flex items-center gap-2 text-sm font-semibold text-ink">
                     <MapPin className="h-4 w-4 text-brand-600" /> Proudly local since {new Date().getFullYear() - site.stats.yearsServing}

@@ -13,23 +13,26 @@ UX throughout.
 
 - **8 fully designed pages** — Home, About, Services, Smile Gallery, Meet the
   Doctors, Patient Reviews, Contact, and a multi-step Appointment Booking flow.
-- **Luxury blue-and-white identity** — a refined azure + champagne-gold palette,
-  a Fraunces/​Plus Jakarta Sans type pairing, soft shadows, and glassmorphism.
-- **Interactive, animated UI** — scroll reveals, a draggable **before/after
-  smile slider**, a filterable smile gallery, an autoplaying testimonials
-  carousel, animated counters, an accessible FAQ accordion, and a sticky mobile
-  booking bar.
-- **Self-contained visual system** — every illustration (hero smile, doctor
-  portraits, before/after cases, service icons, brand mark) is hand-built with
-  SVG + gradients. Nothing depends on external image hosts, so the site always
-  renders, loads instantly, and stays perfectly on-brand. Real photography can
-  be dropped in at any time (see [Adding photos](#-adding-real-photography)).
+- **Futuristic luxury identity** — dark **aurora** hero gradients, glassmorphism,
+  neon glow, gradient hairline borders, film grain, an azure → electric-cyan →
+  iris palette, and a Fraunces / Plus Jakarta Sans type pairing.
+- **Cinematic motion** — scroll-progress bar, smooth page transitions, scroll
+  **parallax**, 3D **tilt** cards, **magnetic** buttons, word-by-word **text
+  reveals**, marquees, animated counters, a draggable **before/after smile
+  slider**, a filterable gallery, and an autoplaying testimonials carousel —
+  all gated behind `prefers-reduced-motion`.
+- **Real photography, gracefully** — images load straight from Unsplash's CDN
+  via a custom `next/image` loader, each layered over a branded gradient
+  fallback so the layout looks intentional even if a photo is unavailable
+  (see [Photography](#-photography)).
 - **Modern 3-step appointment wizard** — service → schedule → details, with
   inline validation, a deep-link `?doctor=` prefill, and a polished success
   state.
 - **SEO + accessibility first** — `Dentist` / `FAQPage` / `WebSite` JSON-LD,
   dynamic OG image, sitemap, robots, semantic landmarks, skip link, keyboard
-  support, focus-visible rings, and `prefers-reduced-motion` handling.
+  support, focus-visible rings, and reduced-motion handling.
+- **Deploy-ready** — includes a Render Blueprint (`render.yaml`) for one-click
+  hosting.
 
 ## 🧰 Tech Stack
 
@@ -101,20 +104,25 @@ All copy and business data live in plain TypeScript modules — no CMS required.
 > written **placeholders** for the redesign — replace them with the practice's
 > verified details before launch.
 
-## 🖼 Adding Real Photography
+## 🖼 Photography
 
-The site ships with a custom SVG/gradient art system so it looks polished with
-zero image dependencies. To use real photos instead:
+Photography is centralized in **`src/lib/images.ts`** (curated Unsplash photo
+IDs) and rendered through **`src/components/media/Photo.tsx`**, which:
 
-1. Drop images into `public/` (e.g. `public/doctors/dr-mangla.jpg`).
-2. Reference them in the data files:
-   - Doctors: set `photo: "/doctors/dr-mangla.jpg"` in `doctors.ts`
-   - Gallery: set `beforeImg` / `afterImg` in `gallery.ts`
-3. For remote images, the Unsplash hostnames are already allow-listed in
-   `next.config.ts` — add others under `images.remotePatterns` as needed.
+- serves responsive images directly from Unsplash's CDN via a custom loader
+  (no build-time fetch, so the build never depends on image hosts), and
+- always renders a **branded gradient fallback** behind every image, shown while
+  loading or if an image fails — so the design never looks broken.
 
-The `DoctorCard` and `BeforeAfter` components automatically prefer a real image
-when one is provided and fall back to the branded artwork otherwise.
+> Images load wherever the deployment has normal outbound network access
+> (e.g. Render, Vercel). Some locked-down build sandboxes block external image
+> hosts; that only affects local previews, not your live site.
+
+**To use your own photos:** drop files in `public/` and replace the URLs in
+`src/lib/images.ts` (e.g. `"/photos/team.jpg"`), or swap in different Unsplash
+photo IDs. The procedural **before/after smile slider** stays SVG-based (real
+paired clinical photos aren't on stock sites) but accepts `beforeImg`/`afterImg`
+in `src/lib/data/gallery.ts` if you have them.
 
 ## 🎨 Design System
 

@@ -8,8 +8,10 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Stars } from "@/components/ui/Stars";
 import { Button } from "@/components/ui/Button";
 import { MonogramAvatar } from "@/components/art/Portrait";
+import { Photo } from "@/components/media/Photo";
 import { TestimonialsCarousel } from "@/components/reviews/TestimonialsCarousel";
 import { testimonials } from "@/lib/data/testimonials";
+import { getReviewerPhoto } from "@/lib/images";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -28,7 +30,7 @@ export default function ReviewsPage() {
         title={
           <>
             Trusted by thousands of{" "}
-            <span className="text-gradient">Texas City smiles</span>
+            <span className="text-gradient-electric">Texas City smiles</span>
           </>
         }
         lead="We're proud of the relationships we've built — but our patients say it best. Here's what your neighbors think of their experience."
@@ -76,10 +78,10 @@ export default function ReviewsPage() {
       <section className="pb-16 sm:pb-20">
         <Container>
           <div className="columns-1 gap-6 sm:columns-2 lg:columns-3 [&>*]:mb-6">
-            {testimonials.map((t) => (
+            {testimonials.map((t, i) => (
               <figure
                 key={t.name}
-                className="break-inside-avoid rounded-3xl border border-slate-100 bg-white p-6 shadow-card"
+                className="break-inside-avoid rounded-3xl border border-slate-100 bg-white p-6 shadow-card transition-shadow duration-300 hover:shadow-lift"
               >
                 <div className="flex items-center justify-between">
                   <Stars rating={t.rating} size={16} />
@@ -89,7 +91,15 @@ export default function ReviewsPage() {
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-5 flex items-center gap-3 border-t border-slate-50 pt-4">
-                  <MonogramAvatar initials={t.initials} accent={t.accent} className="h-11 w-11 text-sm" />
+                  <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full ring-2 ring-white">
+                    <Photo
+                      src={getReviewerPhoto(i)}
+                      alt={t.name}
+                      sizes="44px"
+                      className="h-full w-full rounded-full"
+                      fallback={<MonogramAvatar initials={t.initials} accent={t.accent} className="h-full w-full text-sm" />}
+                    />
+                  </span>
                   <div>
                     <p className="text-sm font-semibold text-ink">{t.name}</p>
                     <p className="flex items-center gap-1 text-xs text-slate-500">

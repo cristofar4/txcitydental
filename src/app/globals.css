@@ -1,43 +1,54 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/*  Texas City Dental — Luxury Design System (Tailwind v4 CSS-first)   */
+/*  Texas City Dental — Futuristic Luxury Design System (Tailwind v4)  */
 /* ------------------------------------------------------------------ */
 
 @theme {
   /* Brand azure — trustworthy, modern healthcare blue */
   --color-brand-50: #eff6ff;
-  --color-brand-100: #dcebfe;
-  --color-brand-200: #bedcfd;
-  --color-brand-300: #91c5fb;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
   --color-brand-400: #5ea5f6;
   --color-brand-500: #3884ef;
   --color-brand-600: #2167d6;
   --color-brand-700: #1c52b0;
   --color-brand-800: #1c478f;
   --color-brand-900: #1c3d76;
-  --color-brand-950: #132646;
+  --color-brand-950: #101f3f;
 
-  /* Deep navies for dark sections, headings, footer */
-  --color-ink: #0b1f3a;
-  --color-midnight: #07152b;
+  /* Electric accents for the futuristic glow language */
+  --color-electric-300: #7df3ff;
+  --color-electric-400: #38e2f5;
+  --color-electric-500: #16cfe6;
+  --color-iris-400: #8b7cff;
+  --color-iris-500: #6d5cf5;
+  --color-iris-600: #5a43e0;
+
+  /* Deep space navies for dark sections, headings, footer */
+  --color-ink: #0a1834;
+  --color-midnight: #050d20;
+  --color-void: #03060f;
 
   /* Champagne gold — restrained luxury accent */
-  --color-gold-200: #f1e6c6;
+  --color-gold-200: #f3e8c8;
   --color-gold-300: #e7d4a0;
   --color-gold-400: #d9bf7c;
   --color-gold-500: #c9a85f;
   --color-gold-600: #ad8c45;
 
   /* Soft surfaces */
-  --color-mist: #f4f8ff;
+  --color-mist: #f3f7ff;
   --color-cloud: #fbfcff;
 
-  /* Luxury shadows */
-  --shadow-soft: 0 2px 10px -3px rgb(11 31 58 / 0.08);
-  --shadow-card: 0 18px 40px -22px rgb(11 31 58 / 0.28);
-  --shadow-lift: 0 30px 60px -28px rgb(11 31 58 / 0.35);
-  --shadow-glow: 0 0 0 1px rgb(33 103 214 / 0.08), 0 24px 60px -24px rgb(33 103 214 / 0.45);
+  /* Luxury + neon shadows */
+  --shadow-soft: 0 2px 10px -3px rgb(10 24 52 / 0.08);
+  --shadow-card: 0 18px 40px -22px rgb(10 24 52 / 0.28);
+  --shadow-lift: 0 36px 70px -30px rgb(10 24 52 / 0.4);
+  --shadow-glow: 0 0 0 1px rgb(33 103 214 / 0.08), 0 24px 60px -24px rgb(33 103 214 / 0.5);
+  --shadow-neon: 0 0 0 1px rgb(56 226 245 / 0.18), 0 18px 60px -18px rgb(56 226 245 / 0.45);
+  --shadow-iris: 0 18px 60px -18px rgb(109 92 245 / 0.5);
 
   /* Custom radii */
   --radius-4xl: 2rem;
@@ -49,8 +60,13 @@
   --animate-blob: blob 18s ease-in-out infinite;
   --animate-shimmer: shimmer 2.6s linear infinite;
   --animate-marquee: marquee 38s linear infinite;
-  --animate-spin-slow: spin 24s linear infinite;
+  --animate-marquee-rev: marquee-rev 42s linear infinite;
+  --animate-spin-slow: spin 26s linear infinite;
   --animate-pulse-ring: pulse-ring 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-aurora: aurora 18s ease infinite;
+  --animate-gradient: gradient-pan 6s ease infinite;
+  --animate-glow: glow-pulse 4s ease-in-out infinite;
+  --animate-rise: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* Map next/font CSS variables onto the type scale */
@@ -86,26 +102,23 @@
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 500;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     text-wrap: balance;
   }
 
-  p {
-    text-wrap: pretty;
-  }
+  p { text-wrap: pretty; }
 
   ::selection {
-    background-color: color-mix(in oklab, var(--color-brand-500) 25%, transparent);
+    background-color: color-mix(in oklab, var(--color-electric-400) 30%, transparent);
     color: var(--color-ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-brand-600);
+    outline: 2px solid var(--color-electric-500);
     outline-offset: 3px;
     border-radius: 4px;
   }
 
-  /* Respect users who prefer reduced motion */
   @media (prefers-reduced-motion: reduce) {
     *,
     ::before,
@@ -122,88 +135,109 @@
 @layer utilities {
   /* Gradient display text */
   .text-gradient {
-    background-image: linear-gradient(
-      120deg,
-      var(--color-brand-700),
-      var(--color-brand-500) 55%,
-      var(--color-brand-400)
-    );
+    background-image: linear-gradient(115deg, var(--color-brand-700), var(--color-brand-500) 45%, var(--color-electric-400));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-
+  .text-gradient-electric {
+    background-image: linear-gradient(115deg, var(--color-brand-400), var(--color-electric-400) 50%, var(--color-iris-400));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
   .text-gradient-gold {
-    background-image: linear-gradient(
-      110deg,
-      var(--color-gold-500),
-      var(--color-gold-300) 50%,
-      var(--color-gold-500)
-    );
+    background-image: linear-gradient(110deg, var(--color-gold-500), var(--color-gold-300) 50%, var(--color-gold-500));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
+  .text-glow {
+    text-shadow: 0 0 30px color-mix(in oklab, var(--color-electric-400) 55%, transparent);
+  }
 
-  /* Frosted glass surface */
+  /* Frosted glass surfaces */
   .glass {
-    background-color: color-mix(in oklab, white 72%, transparent);
-    backdrop-filter: blur(14px) saturate(140%);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    background-color: color-mix(in oklab, white 70%, transparent);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
   }
-
   .glass-dark {
-    background-color: color-mix(in oklab, var(--color-midnight) 55%, transparent);
-    backdrop-filter: blur(14px) saturate(140%);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    background-color: color-mix(in oklab, var(--color-midnight) 45%, transparent);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
   }
 
-  /* Subtle dotted/grid backdrops */
+  /* Gradient hairline border via padding-box/border-box trick */
+  .gradient-border {
+    background:
+      linear-gradient(var(--gb-bg, white), var(--gb-bg, white)) padding-box,
+      linear-gradient(135deg, var(--color-brand-400), var(--color-electric-400), var(--color-iris-500)) border-box;
+    border: 1px solid transparent;
+  }
+  .gradient-border-dark { --gb-bg: var(--color-midnight); }
+
+  /* Backdrops */
   .bg-grid {
     background-image:
       linear-gradient(to right, color-mix(in oklab, var(--color-brand-900) 6%, transparent) 1px, transparent 1px),
       linear-gradient(to bottom, color-mix(in oklab, var(--color-brand-900) 6%, transparent) 1px, transparent 1px);
     background-size: 56px 56px;
   }
-
+  .bg-grid-dark {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
   .bg-dots {
-    background-image: radial-gradient(
-      color-mix(in oklab, var(--color-brand-700) 14%, transparent) 1px,
-      transparent 1px
-    );
+    background-image: radial-gradient(color-mix(in oklab, var(--color-brand-700) 14%, transparent) 1px, transparent 1px);
     background-size: 22px 22px;
   }
 
-  /* Animated brand mesh used behind hero / CTA bands */
+  /* Static brand mesh */
   .bg-mesh {
-    background-color: var(--color-brand-950);
+    background-color: var(--color-midnight);
     background-image:
       radial-gradient(at 18% 22%, color-mix(in oklab, var(--color-brand-500) 55%, transparent) 0px, transparent 45%),
-      radial-gradient(at 82% 12%, color-mix(in oklab, var(--color-brand-400) 45%, transparent) 0px, transparent 40%),
-      radial-gradient(at 72% 88%, color-mix(in oklab, var(--color-gold-500) 28%, transparent) 0px, transparent 45%),
+      radial-gradient(at 82% 12%, color-mix(in oklab, var(--color-electric-400) 40%, transparent) 0px, transparent 40%),
+      radial-gradient(at 72% 88%, color-mix(in oklab, var(--color-iris-500) 38%, transparent) 0px, transparent 48%),
       radial-gradient(at 25% 85%, color-mix(in oklab, var(--color-brand-700) 60%, transparent) 0px, transparent 50%);
   }
 
-  .mask-fade-b {
-    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent);
-    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  /* Animated aurora — the futuristic signature backdrop */
+  .bg-aurora {
+    background-color: var(--color-void);
+    background-image:
+      radial-gradient(40% 50% at 15% 20%, color-mix(in oklab, var(--color-brand-500) 55%, transparent), transparent),
+      radial-gradient(35% 45% at 85% 18%, color-mix(in oklab, var(--color-electric-500) 45%, transparent), transparent),
+      radial-gradient(45% 55% at 75% 85%, color-mix(in oklab, var(--color-iris-500) 50%, transparent), transparent),
+      radial-gradient(40% 50% at 25% 80%, color-mix(in oklab, var(--color-brand-700) 60%, transparent), transparent);
+    background-size: 200% 200%;
   }
 
-  /* Shimmer sweep for "premium" surfaces and skeletons */
+  .mask-fade-b { -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent); mask-image: linear-gradient(to bottom, black 70%, transparent); }
+  .mask-fade-x { -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent); mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent); }
+
   .shimmer {
-    background-image: linear-gradient(
-      110deg,
-      transparent 30%,
-      color-mix(in oklab, white 45%, transparent) 50%,
-      transparent 70%
-    );
+    background-image: linear-gradient(110deg, transparent 30%, color-mix(in oklab, white 45%, transparent) 50%, transparent 70%);
     background-size: 200% 100%;
   }
 
-  .tap-target {
-    min-height: 44px;
-    min-width: 44px;
+  /* Subtle film grain overlay */
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
+
+  .perspective { perspective: 1200px; }
+  .preserve-3d { transform-style: preserve-3d; }
+  .tap-target { min-height: 44px; min-width: 44px; }
 }
 
 /* ---------------------------- keyframes --------------------------- */
@@ -211,24 +245,32 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
 }
-
 @keyframes blob {
   0%, 100% { border-radius: 42% 58% 63% 37% / 42% 42% 58% 58%; transform: translate(0, 0) rotate(0deg); }
   33% { border-radius: 58% 42% 38% 62% / 56% 38% 62% 44%; transform: translate(12px, -10px) rotate(8deg); }
   66% { border-radius: 38% 62% 56% 44% / 40% 62% 38% 60%; transform: translate(-10px, 8px) rotate(-6deg); }
 }
-
-@keyframes shimmer {
-  to { background-position: -200% 0; }
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
+@keyframes shimmer { to { background-position: -200% 0; } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes marquee-rev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-brand-500) 45%, transparent); }
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-electric-400) 50%, transparent); }
   70% { box-shadow: 0 0 0 16px transparent; }
   100% { box-shadow: 0 0 0 0 transparent; }
+}
+@keyframes aurora {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }

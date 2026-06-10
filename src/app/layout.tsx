@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyCTA } from "@/components/layout/StickyCTA";
+import { ScrollProgress } from "@/components/ui/motion";
 import { LocalBusinessSchema, WebsiteSchema } from "@/components/seo/StructuredData";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -79,6 +80,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <ScrollProgress />
         <Header />
         <main id="main">{children}</main>
         <Footer />

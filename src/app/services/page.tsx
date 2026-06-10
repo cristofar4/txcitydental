@@ -34,7 +34,7 @@ export default function ServicesPage() {
         title={
           <>
             Complete care for every smile,{" "}
-            <span className="text-gradient">at every age</span>
+            <span className="text-gradient-electric">at every age</span>
           </>
         }
         lead="One trusted home for your family's entire dental journey — delivered with comfort, artistry, and the latest technology."

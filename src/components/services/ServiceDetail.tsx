@@ -2,8 +2,10 @@ import { Check, Lightbulb, ArrowRight, Tag } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
+import { Photo } from "@/components/media/Photo";
 import { ServiceIcon, ToothMark } from "@/components/art/icons";
 import { getAccent, accentGradient } from "@/lib/accents";
+import { getServicePhoto } from "@/lib/images";
 import { cn } from "@/lib/utils";
 import type { Service } from "@/lib/data/services";
 
@@ -20,26 +22,33 @@ export function ServiceDetail({ service, index }: { service: Service; index: num
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Visual */}
           <Reveal className={cn(reverse && "lg:order-last")}>
-            <div className="relative">
-              <div
-                className="relative overflow-hidden rounded-[2.25rem] p-8 shadow-lift sm:p-10"
-                style={{ background: accentGradient(service.accent) }}
-              >
+            <div className="group relative">
+              <div className="relative overflow-hidden rounded-[2.25rem] shadow-lift">
+                {/* real photo, tinted with the service accent */}
+                <Photo
+                  src={getServicePhoto(service.slug)}
+                  alt={`${service.title} at Texas City Dental`}
+                  sizes="(max-width:1024px) 90vw, 45vw"
+                  zoom
+                  fallbackAccent={service.accent === "gold" ? "gold" : "ocean"}
+                  className="absolute inset-0 h-full w-full"
+                />
+                <div
+                  className="absolute inset-0 opacity-90 mix-blend-multiply"
+                  style={{ background: accentGradient(service.accent) }}
+                  aria-hidden="true"
+                />
                 <div className="pointer-events-none absolute inset-0 bg-dots opacity-15" aria-hidden="true" />
                 <ToothMark className="pointer-events-none absolute -right-8 -top-8 h-44 w-44 rotate-12 text-white/10" />
-                <ServiceIcon
-                  name={service.icon}
-                  className="pointer-events-none absolute -bottom-6 -left-4 h-40 w-40 text-white/10"
-                />
 
-                <div className="relative">
+                <div className="relative p-8 sm:p-10">
                   <span className="inline-grid h-16 w-16 place-items-center rounded-2xl bg-white/20 text-white ring-1 ring-white/30 backdrop-blur">
                     <ServiceIcon name={service.icon} className="h-8 w-8" />
                   </span>
-                  <p className="mt-6 max-w-xs text-pretty text-lg font-medium leading-snug text-white">
+                  <p className="mt-24 max-w-xs text-pretty text-lg font-medium leading-snug text-white sm:mt-28">
                     {service.short}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-sm font-semibold text-white ring-1 ring-white/20">
+                  <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur">
                     <Tag className="h-4 w-4" />
                     {service.priceNote}
                   </span>
