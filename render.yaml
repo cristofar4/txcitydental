@@ -11,8 +11,8 @@ services:
     autoDeploy: true
     # npm ci uses the committed package-lock.json for a reproducible install.
     buildCommand: npm ci && npm run build
-    # Render injects $PORT; bind Next.js to it explicitly.
-    startCommand: npm run start -- -p $PORT
+    # Render injects $PORT into the environment; Next.js binds to it automatically.
+    startCommand: npm run start
     healthCheckPath: /
     envVars:
       - key: NODE_VERSION
