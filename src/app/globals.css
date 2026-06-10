@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/*  Texas City Dental — Futuristic Luxury Design System (Tailwind v4)  */
+/*  Texas City Dental, Futuristic Luxury Design System (Tailwind v4)  */
 /* ------------------------------------------------------------------ */
 
 @theme {
-  /* Brand azure — trustworthy, modern healthcare blue */
+  /* Brand azure, trustworthy, modern healthcare blue */
   --color-brand-50: #eff6ff;
   --color-brand-100: #dbeafe;
   --color-brand-200: #bfdbfe;
@@ -31,7 +31,7 @@
   --color-midnight: #050d20;
   --color-void: #03060f;
 
-  /* Champagne gold — restrained luxury accent */
+  /* Champagne gold, restrained luxury accent */
   --color-gold-200: #f3e8c8;
   --color-gold-300: #e7d4a0;
   --color-gold-400: #d9bf7c;
@@ -67,6 +67,7 @@
   --animate-gradient: gradient-pan 6s ease infinite;
   --animate-glow: glow-pulse 4s ease-in-out infinite;
   --animate-rise: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-kenburns: kenburns 26s ease-in-out infinite alternate;
 }
 
 /* Map next/font CSS variables onto the type scale */
@@ -205,7 +206,7 @@
       radial-gradient(at 25% 85%, color-mix(in oklab, var(--color-brand-700) 60%, transparent) 0px, transparent 50%);
   }
 
-  /* Animated aurora — the futuristic signature backdrop */
+  /* Animated aurora, the futuristic signature backdrop */
   .bg-aurora {
     background-color: var(--color-void);
     background-image:
@@ -273,4 +274,8 @@
 @keyframes rise {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
+}
+@keyframes kenburns {
+  from { transform: scale(1.06) translate3d(0, 0, 0); }
+  to { transform: scale(1.2) translate3d(-2%, -1.5%, 0); }
 }

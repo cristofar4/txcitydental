@@ -27,7 +27,7 @@ export function MonogramAvatar({
 
 /**
  * Tall illustrated "portrait" placeholder for doctor cards. A designed,
- * on-brand stand-in for photography — drop a real headshot into /public/doctors
+ * on-brand stand-in for photography, drop a real headshot into /public/doctors
  * and pass `photo` to DoctorCard to use it instead.
  */
 export function DoctorPortrait({

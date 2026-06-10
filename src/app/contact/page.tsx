@@ -25,7 +25,7 @@ export default function ContactPage() {
             We&apos;d love to <span className="text-gradient-electric">hear from you</span>
           </>
         }
-        lead="Questions, appointments, or just saying hello — our friendly team is here to help. Reach out and we'll get right back to you."
+        lead="Questions, appointments, or just saying hello, our friendly team is here to help. Reach out and we'll get right back to you."
       />
 
       <section className="py-12 sm:py-16">
@@ -35,11 +35,11 @@ export default function ContactPage() {
             <div>
               <h2 className="text-2xl font-semibold text-ink sm:text-3xl">Visit our studio</h2>
               <p className="mt-3 text-slate-600">
-                Conveniently located on Palmer Hwy with easy parking. Walk-ins welcome — though we recommend booking ahead.
+                Conveniently located on Palmer Hwy with easy parking. Walk ins welcome, though we recommend booking ahead.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <InfoCard icon={Phone} title="Call us" href={site.phoneHref} value={site.phone} note="Mon–Sat" />
+                <InfoCard icon={Phone} title="Call us" href={site.phoneHref} value={site.phone} note="Mon to Sat" />
                 <InfoCard icon={Mail} title="Email us" href={site.emailHref} value={site.email} note="We reply within a day" />
                 <InfoCard
                   icon={MapPin}
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold">Dental emergency?</p>
                   <p className="mt-0.5 text-sm text-brand-100/90">
-                    Call us right away — we keep same-day slots open for urgent care.
+                    Call us right away, we keep same day slots open for urgent care.
                   </p>
                   <a href={site.phoneHref} className="mt-2 inline-block font-semibold text-gold-300 hover:text-gold-200">
                     {site.phone} →

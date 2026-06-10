@@ -11,13 +11,13 @@ import { doctors } from "@/lib/data/doctors";
 export const metadata: Metadata = {
   title: "Meet the Doctors",
   description:
-    "Meet Dr. Kapil Mangla, Dr. Sushmita Rath, and Dr. Kamran Shaikh — the experienced, compassionate dentists behind Texas City Dental.",
+    "Meet Dr. Kapil Mangla, Dr. Sushmita Rath, and Dr. Kamran Shaikh, the experienced, compassionate dentists behind Texas City Dental.",
   alternates: { canonical: "/doctors" },
 };
 
 const ethos = [
-  { icon: HeartHandshake, title: "We lead with kindness", text: "Every patient is met with patience and zero judgment — anxiety and all." },
-  { icon: GraduationCap, title: "We never stop learning", text: "Ongoing training keeps our care modern, gentle, and evidence-based." },
+  { icon: HeartHandshake, title: "We lead with kindness", text: "Every patient is met with patience and zero judgment, anxiety and all." },
+  { icon: GraduationCap, title: "We never stop learning", text: "Ongoing training keeps our care modern, gentle, and evidence based." },
   { icon: Stethoscope, title: "We treat the whole person", text: "Your comfort, goals, and budget shape every recommendation we make." },
 ];
 

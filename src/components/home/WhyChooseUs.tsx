@@ -10,12 +10,12 @@ import { site } from "@/lib/site";
 
 const reasons = [
   {
-    title: "Comfort-first, always",
-    text: "Warm blankets, noise-cancelling headphones, sedation options, and a team that listens. Anxiety welcome — we'll change how you feel about the dentist.",
+    title: "Comfort first, always",
+    text: "Warm blankets, noise cancelling headphones, sedation options, and a team that listens. Anxiety welcome, we'll change how you feel about the dentist.",
   },
   {
     title: "Everything under one roof",
-    text: "From cleanings to implants, cosmetic veneers to kids' visits — your whole family's care is handled in one beautiful, convenient place.",
+    text: "From cleanings to implants, cosmetic veneers to kids' visits, your whole family's care is handled in one beautiful, convenient place.",
   },
   {
     title: "Honest, transparent care",
@@ -23,7 +23,7 @@ const reasons = [
   },
   {
     title: "Beautiful, lasting results",
-    text: "Premium materials and meticulous, artistry-driven technique mean restorations and smile makeovers that look natural and last for years.",
+    text: "Premium materials and meticulous, artistry driven technique mean restorations and smile makeovers that look natural and last for years.",
   },
 ];
 
@@ -70,7 +70,7 @@ export function WhyChooseUs() {
 
               <div className="absolute -right-3 top-6 animate-float rounded-2xl bg-gradient-to-br from-brand-500 to-iris-600 px-4 py-3 text-white shadow-iris sm:-right-6">
                 <p className="flex items-center gap-1.5 text-sm font-semibold">
-                  <Sparkles className="h-4 w-4 text-electric-300" /> Spa-like care
+                  <Sparkles className="h-4 w-4 text-electric-300" /> Spa like care
                 </p>
               </div>
             </div>

@@ -8,7 +8,7 @@ import { Magnetic } from "@/components/ui/motion";
 import { Photo } from "@/components/media/Photo";
 import { ToothMark } from "@/components/art/icons";
 
-/** Reusable conversion band — the closing call-to-action used across pages. */
+/** Reusable conversion band, the closing call-to-action used across pages. */
 export function CTASection({
   title = "Ready for the smile you deserve?",
   subtitle = "Book your visit in under a minute. New patients are always welcome, and we'll make sure your first appointment feels anything but ordinary.",
@@ -38,7 +38,7 @@ export function CTASection({
               <div className="mx-auto max-w-2xl">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-brand-100 backdrop-blur">
                   <Sparkles className="h-3.5 w-3.5 text-electric-300" />
-                  Same-week appointments
+                  Same week appointments
                 </span>
                 <h2 className="mt-6 text-balance text-3xl text-white sm:text-4xl lg:text-5xl">{title}</h2>
                 <p className="mx-auto mt-5 max-w-xl text-pretty text-base leading-relaxed text-brand-100/85 sm:text-lg">

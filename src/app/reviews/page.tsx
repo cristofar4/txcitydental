@@ -33,7 +33,7 @@ export default function ReviewsPage() {
             <span className="text-gradient-electric">Texas City smiles</span>
           </>
         }
-        lead="We're proud of the relationships we've built — but our patients say it best. Here's what your neighbors think of their experience."
+        lead="We're proud of the relationships we've built, but our patients say it best. Here's what your neighbors think of their experience."
       />
 
       {/* Rating summary */}
@@ -129,7 +129,7 @@ export default function ReviewsPage() {
         </Container>
       </section>
 
-      <CTASection title="Experience five-star dentistry yourself" />
+      <CTASection title="Experience five star dentistry yourself" />
     </>
   );
 }

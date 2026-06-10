@@ -12,10 +12,10 @@ import { site } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 
 const timeSlots = [
-  { id: "morning", label: "Morning", note: "8–11 AM" },
-  { id: "midday", label: "Midday", note: "11–2 PM" },
-  { id: "afternoon", label: "Afternoon", note: "2–5 PM" },
-  { id: "evening", label: "Evening", note: "5–6 PM" },
+  { id: "morning", label: "Morning", note: "8 to 11 AM" },
+  { id: "midday", label: "Midday", note: "11 to 2 PM" },
+  { id: "afternoon", label: "Afternoon", note: "2 to 5 PM" },
+  { id: "evening", label: "Evening", note: "5 to 6 PM" },
 ];
 
 const stepsMeta = [
@@ -58,7 +58,7 @@ export function AppointmentForm() {
   const [done, setDone] = useState(false);
 
   // Prefill the doctor from a ?doctor=slug deep link (e.g. from a doctor card).
-  // Reading window.location on mount is the recommended pattern here — doing it
+  // Reading window.location on mount is the recommended pattern here, doing it
   // in a lazy initializer would cause a server/client hydration mismatch.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -203,7 +203,7 @@ export function AppointmentForm() {
               <Field label="Are you a new or returning patient?" error={errors.patientType}>
                 <div className="grid grid-cols-2 gap-2">
                   {[
-                    { id: "new-patient", label: "New patient" },
+                    { id: "new patient", label: "New patient" },
                     { id: "existing-patient", label: "Returning patient" },
                   ].map((p) => (
                     <ChipButton
@@ -254,10 +254,10 @@ export function AppointmentForm() {
                   onChange={(e) => update("doctor", e.target.value)}
                   className={inputClass}
                 >
-                  <option value="no-preference">No preference — first available</option>
+                  <option value="no-preference">No preference, first available</option>
                   {doctors.map((d) => (
                     <option key={d.slug} value={d.slug}>
-                      {d.name} — {d.role}
+                      {d.name}, {d.role}
                     </option>
                   ))}
                 </select>
@@ -266,7 +266,7 @@ export function AppointmentForm() {
           )}
 
           {step === 2 && (
-            <Fieldset legend="Almost done — how can we reach you?">
+            <Fieldset legend="Almost done, how can we reach you?">
               <Field label="Full name" error={errors.name}>
                 <IconInput icon={User} placeholder="Jane Doe" value={form.name} onChange={(v) => update("name", v)} autoComplete="name" />
               </Field>
@@ -317,7 +317,7 @@ export function AppointmentForm() {
       </div>
 
       <p className="mt-5 text-center text-xs text-slate-400">
-        This sends an appointment request — no charge, no obligation. We&apos;ll call to confirm.
+        This sends an appointment request, no charge, no obligation. We&apos;ll call to confirm.
       </p>
     </div>
   );

@@ -8,7 +8,7 @@ const steps = [
     icon: CalendarCheck,
     step: "01",
     title: "Book in 60 seconds",
-    text: "Request your visit online or call us. Tell us what you need and when works for you — we'll confirm fast.",
+    text: "Request your visit online or call us. Tell us what you need and when works for you, we'll confirm fast.",
   },
   {
     icon: MessageCircleHeart,
@@ -20,7 +20,7 @@ const steps = [
     icon: Smile,
     step: "03",
     title: "Love your smile",
-    text: "Receive comfortable, expert treatment and leave with a healthier, brighter smile — and a team in your corner.",
+    text: "Receive comfortable, expert treatment and leave with a healthier, brighter smile, and a team in your corner.",
   },
 ];
 
@@ -31,7 +31,7 @@ export function Process() {
         <SectionHeading
           eyebrow="Simple From Start to Smile"
           title="Your visit, in three easy steps"
-          lead="We've made getting world-class dental care effortless — from your first click to your brightest smile."
+          lead="We've made getting world class dental care effortless, from your first click to your brightest smile."
         />
 
         <Stagger className="relative mt-16 grid gap-8 md:grid-cols-3">

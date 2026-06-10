@@ -7,7 +7,7 @@ import { Phone, CalendarHeart } from "lucide-react";
 import { site } from "@/lib/site";
 
 /**
- * Mobile sticky action bar — always-available Call + Book buttons that slide in
+ * Mobile sticky action bar, always-available Call + Book buttons that slide in
  * after the user scrolls past the hero. Hidden on the booking page itself.
  */
 export function StickyCTA() {

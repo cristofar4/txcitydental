@@ -50,7 +50,7 @@ const itemVariants: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
 };
 
-/** Staggered container — pair with <StaggerItem> children. */
+/** Staggered container, pair with <StaggerItem> children. */
 export function Stagger({
   children,
   className,

@@ -46,7 +46,7 @@ export default function HomePage() {
                   <span className="text-gradient">beautifully delivered</span>
                 </>
               }
-              lead="From routine check-ups to complete smile transformations, our full range of services is delivered with comfort, artistry, and precision."
+              lead="From routine check ups to complete smile transformations, our full range of services is delivered with comfort, artistry, and precision."
             />
             <Button href="/services" variant="ghost" className="hidden shrink-0 sm:inline-flex">
               View all services <ArrowRight className="h-4 w-4" />
@@ -72,7 +72,7 @@ export default function HomePage() {
                   </span>
                   <h3 className="mt-5 text-xl font-semibold">Not sure what you need?</h3>
                   <p className="mt-2 text-sm leading-relaxed text-brand-100/85">
-                    Tell us your goals — we&apos;ll recommend the right care, no pressure.
+                    Tell us your goals, we&apos;ll recommend the right care, no pressure.
                   </p>
                 </div>
                 <span className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-300">
@@ -96,7 +96,7 @@ export default function HomePage() {
             tone="light"
             eyebrow="Real Transformations"
             title="See the smiles we've crafted"
-            lead="Drag the slider to reveal stunning before-and-after results from real treatments at Texas City Dental."
+            lead="Drag the slider to reveal stunning before and after results from real treatments at Texas City Dental."
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             {previewCases.map((c) => (
@@ -155,8 +155,8 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="Loved by Our Patients"
-            title="Five-star care, in their words"
-            lead={`Don't just take our word for it — here's what Texas City families say about their experience.`}
+            title="Five star care, in their words"
+            lead={`Don't just take our word for it, here's what Texas City families say about their experience.`}
           />
           <div className="mt-12">
             <TestimonialsCarousel testimonials={testimonials} />

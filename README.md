@@ -1,7 +1,7 @@
-# Texas City Dental — Luxury Practice Website
+# Texas City Dental, Luxury Practice Website
 
 A premium, high-converting website for **Texas City Dental** (Texas City Family
-Dental) — a full redesign built to look and feel like a $15,000+ custom dental
+Dental), a full redesign built to look and feel like a $15,000+ custom dental
 site, with luxury healthcare branding, smooth animation, and conversion-focused
 UX throughout.
 
@@ -11,27 +11,32 @@ UX throughout.
 
 ## ✨ Highlights
 
-- **8 fully designed pages** — Home, About, Services, Smile Gallery, Meet the
+- **8 fully designed pages**, Home, About, Services, Smile Gallery, Meet the
   Doctors, Patient Reviews, Contact, and a multi-step Appointment Booking flow.
-- **Futuristic luxury identity** — dark **aurora** hero gradients, glassmorphism,
+- **Futuristic luxury identity**, dark **aurora** hero gradients, glassmorphism,
   neon glow, gradient hairline borders, film grain, an azure → electric-cyan →
   iris palette, and a Fraunces / Plus Jakarta Sans type pairing.
-- **Cinematic motion** — scroll-progress bar, smooth page transitions, scroll
+- **Cinematic video hero**, a full-screen looping background video (drop one at
+  `public/videos/hero.mp4`) over a slowly panning Ken Burns photo, so it always
+  reads as motion footage even before a video is added.
+- **Cinematic motion**, scroll-progress bar, smooth page transitions, scroll
   **parallax**, 3D **tilt** cards, **magnetic** buttons, word-by-word **text
   reveals**, marquees, animated counters, a draggable **before/after smile
-  slider**, a filterable gallery, and an autoplaying testimonials carousel —
+  slider**, a filterable gallery, and an autoplaying testimonials carousel,
   all gated behind `prefers-reduced-motion`.
-- **Real photography, gracefully** — images load straight from Unsplash's CDN
+- **Legal pages included**, full Privacy Policy and Terms of Service pages,
+  linked from the footer and listed in the sitemap.
+- **Real photography, gracefully**, images load straight from Unsplash's CDN
   via a custom `next/image` loader, each layered over a branded gradient
   fallback so the layout looks intentional even if a photo is unavailable
   (see [Photography](#-photography)).
-- **Modern 3-step appointment wizard** — service → schedule → details, with
+- **Modern 3-step appointment wizard**, service → schedule → details, with
   inline validation, a deep-link `?doctor=` prefill, and a polished success
   state.
-- **SEO + accessibility first** — `Dentist` / `FAQPage` / `WebSite` JSON-LD,
+- **SEO + accessibility first**, `Dentist` / `FAQPage` / `WebSite` JSON-LD,
   dynamic OG image, sitemap, robots, semantic landmarks, skip link, keyboard
   support, focus-visible rings, and reduced-motion handling.
-- **Deploy-ready** — includes a Render Blueprint (`render.yaml`) for one-click
+- **Deploy-ready**, includes a Render Blueprint (`render.yaml`) for one-click
   hosting.
 
 ## 🧰 Tech Stack
@@ -90,7 +95,7 @@ src/
 
 ## ✏️ Editing Content
 
-All copy and business data live in plain TypeScript modules — no CMS required.
+All copy and business data live in plain TypeScript modules, no CMS required.
 
 - **Business info (NAP), hours, stats, social links** → `src/lib/site.ts`
   *(reused by the header, footer, contact page, and structured data)*
@@ -101,7 +106,7 @@ All copy and business data live in plain TypeScript modules — no CMS required.
 - **Smile gallery cases** → `src/lib/data/gallery.ts`
 
 > The doctor bios, credentials, reviews, and pricing notes are professionally
-> written **placeholders** for the redesign — replace them with the practice's
+> written **placeholders** for the redesign, replace them with the practice's
 > verified details before launch.
 
 ## 🖼 Photography
@@ -112,7 +117,7 @@ IDs) and rendered through **`src/components/media/Photo.tsx`**, which:
 - serves responsive images directly from Unsplash's CDN via a custom loader
   (no build-time fetch, so the build never depends on image hosts), and
 - always renders a **branded gradient fallback** behind every image, shown while
-  loading or if an image fails — so the design never looks broken.
+  loading or if an image fails, so the design never looks broken.
 
 > Images load wherever the deployment has normal outbound network access
 > (e.g. Render, Vercel). Some locked-down build sandboxes block external image
@@ -129,10 +134,10 @@ in `src/lib/data/gallery.ts` if you have them.
 Defined CSS-first in `globals.css` via Tailwind v4 `@theme`:
 
 - **Brand azure** `brand-50 … brand-950` (primary `brand-600` `#2167d6`)
-- **Champagne gold** `gold-200 … gold-600` — restrained luxury accent
+- **Champagne gold** `gold-200 … gold-600`, restrained luxury accent
 - **Deep navies** `ink` / `midnight` for dark sections and the footer
-- **Type** — `Fraunces` (display serif) + `Plus Jakarta Sans` (UI/body)
-- **Motion tokens** — `animate-float`, `animate-marquee`, `animate-blob`, etc.
+- **Type**, `Fraunces` (display serif) + `Plus Jakarta Sans` (UI/body)
+- **Motion tokens**, `animate-float`, `animate-marquee`, `animate-blob`, etc.
 
 ## 🔍 SEO & Accessibility
 
@@ -146,7 +151,7 @@ Defined CSS-first in `globals.css` via Tailwind v4 `@theme`:
 
 ## 📌 Notes
 
-- The appointment and contact forms are **front-end demos** — wire them to your
+- The appointment and contact forms are **front-end demos**, wire them to your
   scheduling provider or an API route / form service to capture submissions.
 - The Google Map uses the keyless embed (renders client-side, no API key).
 

@@ -7,17 +7,17 @@ const pillars = [
   {
     icon: HeartHandshake,
     title: "Unhurried Comfort",
-    text: "We never rush. Calm, spa-like visits, gentle techniques, and sedation options keep even the most nervous patients at ease.",
+    text: "We never rush. Calm, spa like visits, gentle techniques, and sedation options keep even the most nervous patients at ease.",
   },
   {
     icon: ShieldCheck,
     title: "Expertise You Trust",
-    text: "Three experienced, genuinely caring dentists and a warm team who treat every patient — and every smile — like family.",
+    text: "Three experienced, genuinely caring dentists and a warm team who treat every patient, and every smile, like family.",
   },
   {
     icon: Microscope,
     title: "Modern Technology",
-    text: "Digital X-rays, 3D treatment planning, and precise digital impressions mean faster, more comfortable, more accurate care.",
+    text: "Digital X rays, 3D treatment planning, and precise digital impressions mean faster, more comfortable, more accurate care.",
   },
 ];
 
@@ -59,7 +59,7 @@ export function Welcome() {
         <Container className="flex justify-center">
           <p className="text-center font-display text-lg italic text-slate-500">
             &ldquo;We treat every patient the way we&apos;d want our own family treated.&rdquo;
-            <span className="mt-1 block text-sm not-italic text-brand-600">— The Texas City Dental Team</span>
+            <span className="mt-1 block text-sm not-italic text-brand-600">,  The Texas City Dental Team</span>
           </p>
         </Container>
       </Reveal>

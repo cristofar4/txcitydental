@@ -14,15 +14,15 @@ import { accentGradient } from "@/lib/accents";
 export const metadata: Metadata = {
   title: "Dental Services",
   description:
-    "Explore our full range of dental services in Texas City, TX — general, cosmetic, orthodontics, oral surgery, pediatric dentistry, cleanings, and crowns & bridges.",
+    "Explore our full range of dental services in Texas City, TX, general, cosmetic, orthodontics, oral surgery, pediatric dentistry, cleanings, and crowns & bridges.",
   alternates: { canonical: "/services" },
 };
 
 const assurances = [
   { icon: ShieldCheck, title: "Most PPO insurance accepted", text: "We file your claims for you." },
   { icon: BadgePercent, title: "Flexible 0% financing", text: "Low monthly payments available." },
-  { icon: CreditCard, title: "Membership plan", text: "No insurance? Save with our in-house plan." },
-  { icon: Receipt, title: "Transparent pricing", text: "Clear estimates before we begin — always." },
+  { icon: CreditCard, title: "Membership plan", text: "No insurance? Save with our in house plan." },
+  { icon: Receipt, title: "Transparent pricing", text: "Clear estimates before we begin, always." },
 ];
 
 export default function ServicesPage() {
@@ -37,7 +37,7 @@ export default function ServicesPage() {
             <span className="text-gradient-electric">at every age</span>
           </>
         }
-        lead="One trusted home for your family's entire dental journey — delivered with comfort, artistry, and the latest technology."
+        lead="One trusted home for your family's entire dental journey, delivered with comfort, artistry, and the latest technology."
       />
 
       {/* Quick nav grid */}

@@ -10,7 +10,7 @@ import { galleryCases } from "@/lib/data/gallery";
 export const metadata: Metadata = {
   title: "Smile Gallery",
   description:
-    "Browse real before-and-after smile transformations from Texas City Dental — veneers, whitening, clear aligners, implants, crowns, and bonding.",
+    "Browse real before and after smile transformations from Texas City Dental, veneers, whitening, clear aligners, implants, crowns, and bonding.",
   alternates: { canonical: "/smile-gallery" },
 };
 
@@ -32,7 +32,7 @@ export default function SmileGalleryPage() {
             <span className="text-gradient-electric">smiles transformed</span>
           </>
         }
-        lead="Slide through real transformations crafted by our team. From subtle refinements to complete makeovers — see what's possible for your smile."
+        lead="Slide through real transformations crafted by our team. From subtle refinements to complete makeovers, see what's possible for your smile."
       />
 
       {/* helper notes */}
@@ -79,7 +79,7 @@ export default function SmileGalleryPage() {
 
       <CTASection
         title="Ready to start your transformation?"
-        subtitle="Book a complimentary smile consultation and we'll show you exactly what's possible — with a digital preview of your new smile."
+        subtitle="Book a complimentary smile consultation and we'll show you exactly what's possible, with a digital preview of your new smile."
       />
     </>
   );

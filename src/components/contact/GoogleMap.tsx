@@ -2,7 +2,7 @@ import { MapPin, Navigation } from "lucide-react";
 import { site } from "@/lib/site";
 
 /**
- * Keyless Google Maps embed — renders client-side in an iframe (no API key
+ * Keyless Google Maps embed, renders client-side in an iframe (no API key
  * required) with a floating address card and a directions deep-link.
  */
 export function GoogleMap({ className }: { className?: string }) {

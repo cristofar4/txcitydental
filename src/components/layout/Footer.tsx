@@ -16,7 +16,7 @@ export function Footer() {
         <div className="lg:col-span-4">
           <Logo tone="light" href={null} />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-brand-100/70">
-            Luxury, comfort-first dentistry for Texas City families. Premium care,
+            Luxury, comfort first dentistry for Texas City families. Premium care,
             modern technology, and a team that treats you like one of our own.
           </p>
           <div className="mt-6 inline-flex items-center gap-3 rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
@@ -136,8 +136,8 @@ export function Footer() {
         <div className="mx-auto flex max-w-[88rem] flex-col items-center justify-between gap-3 px-5 py-6 text-xs text-brand-100/50 sm:flex-row sm:px-8 lg:px-10">
           <p>© {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
           <div className="flex items-center gap-5">
-            <Link href="/contact" className="transition-colors hover:text-white">Privacy</Link>
-            <Link href="/contact" className="transition-colors hover:text-white">Terms</Link>
+            <Link href="/privacy" className="transition-colors hover:text-white">Privacy</Link>
+            <Link href="/terms" className="transition-colors hover:text-white">Terms</Link>
             <Link href="/contact" className="transition-colors hover:text-white">Accessibility</Link>
           </div>
         </div>

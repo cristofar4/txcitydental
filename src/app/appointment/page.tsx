@@ -9,15 +9,15 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Book an Appointment",
   description:
-    "Request your dental appointment at Texas City Dental in under a minute. New patients welcome — choose your service, time, and preferred dentist.",
+    "Request your dental appointment at Texas City Dental in under a minute. New patients welcome, choose your service, time, and preferred dentist.",
   alternates: { canonical: "/appointment" },
 };
 
 const perks = [
-  { icon: CalendarCheck, text: "Same-week appointments available" },
+  { icon: CalendarCheck, text: "Same week appointments available" },
   { icon: ShieldCheck, text: "Most PPO insurance accepted" },
-  { icon: HeartHandshake, text: "Gentle, judgment-free care" },
-  { icon: Sparkles, text: "Complimentary new-patient consults" },
+  { icon: HeartHandshake, text: "Gentle, judgment free care" },
+  { icon: Sparkles, text: "Complimentary new patient consults" },
 ];
 
 export default function AppointmentPage() {
@@ -32,7 +32,7 @@ export default function AppointmentPage() {
             <span className="text-gradient-electric">under a minute</span>
           </>
         }
-        lead="Tell us a little about what you need and when works best. We'll call to confirm your appointment — no charge, no obligation."
+        lead="Tell us a little about what you need and when works best. We'll call to confirm your appointment, no charge, no obligation."
       />
 
       <section className="pb-20 pt-4 sm:pt-8">

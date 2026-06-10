@@ -1,7 +1,7 @@
 /**
  * Accent palette for service cards, doctor avatars, testimonials and gallery
  * cases. Returned as raw hex so components can build gradients via inline
- * styles — this sidesteps Tailwind's static class detection for dynamic keys.
+ * styles, this sidesteps Tailwind's static class detection for dynamic keys.
  */
 
 export type AccentKey =

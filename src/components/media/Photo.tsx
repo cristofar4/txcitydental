@@ -55,7 +55,7 @@ export function Photo({
 
   return (
     <div className={cn("relative overflow-hidden bg-brand-950", rounded, className)}>
-      {/* Branded fallback — always present, visible while loading or on error */}
+      {/* Branded fallback, always present, visible while loading or on error */}
       <div className="absolute inset-0" aria-hidden="true">
         {fallback ?? (
           <div className="relative h-full w-full" style={{ background: accentGradient(fallbackAccent) }}>

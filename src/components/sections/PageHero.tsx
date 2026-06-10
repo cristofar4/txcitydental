@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
-/** Shared dark aurora hero for interior pages — clears the floating header. */
+/** Shared dark aurora hero for interior pages, clears the floating header. */
 export function PageHero({
   eyebrow,
   title,

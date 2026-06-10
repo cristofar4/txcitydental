@@ -32,7 +32,7 @@ export const photos = {
   // CTA background
   ctaBackdrop: `${U}1629909615184-74f495363b67`,
 
-  // Doctor portraits (professional headshots — replace with real team photos)
+  // Doctor portraits (professional headshots, replace with real team photos)
   doctors: {
     "dr-kapil-mangla": `${U}1612349317150-e413f6a5b16d`,
     "dr-sushmita-rath": `${U}1559839734-2b71ea197ec2`,

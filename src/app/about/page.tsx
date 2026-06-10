@@ -16,13 +16,13 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Texas City Dental — a luxury, comfort-first dental practice serving Texas City, TX with compassionate, expert care for the whole family.",
+    "Learn about Texas City Dental, a luxury, comfort first dental practice serving Texas City, TX with compassionate, expert care for the whole family.",
   alternates: { canonical: "/about" },
 };
 
 const values = [
   { icon: HeartHandshake, title: "Compassion", text: "We lead with empathy. Every patient is met with patience, warmth, and zero judgment." },
-  { icon: Gem, title: "Excellence", text: "From materials to technique, we hold ourselves to the highest standard — your smile deserves nothing less." },
+  { icon: Gem, title: "Excellence", text: "From materials to technique, we hold ourselves to the highest standard, your smile deserves nothing less." },
   { icon: ShieldCheck, title: "Integrity", text: "Honest recommendations, transparent pricing, and care we'd choose for our own families." },
   { icon: Lightbulb, title: "Innovation", text: "We invest in modern technology so your care is faster, gentler, and more precise." },
 ];
@@ -39,7 +39,7 @@ export default function AboutPage() {
             <span className="text-gradient-electric">Texas City</span>
           </>
         }
-        lead="We believe going to the dentist should feel calm, caring, and even a little luxurious. Here's the story — and the people — behind that promise."
+        lead="We believe going to the dentist should feel calm, caring, and even a little luxurious. Here's the story, and the people, behind that promise."
       >
         <Button href="/appointment" size="lg">Become a Patient</Button>
       </PageHero>
@@ -77,8 +77,8 @@ export default function AboutPage() {
               <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-600">
                 <p>
                   Texas City Dental began with a simple frustration: too many people dread the
-                  dentist. We set out to build something different — a practice where advanced,
-                  world-class dentistry meets the warmth and familiarity of a neighborhood you know.
+                  dentist. We set out to build something different, a practice where advanced,
+                  world class dentistry meets the warmth and familiarity of a neighborhood you know.
                 </p>
                 <p>
                   Today, our team of three dedicated doctors and a caring support staff serve
@@ -87,9 +87,9 @@ export default function AboutPage() {
                   little bit special.
                 </p>
                 <p>
-                  Whether you&apos;re here for a six-month cleaning or a complete smile makeover,
+                  Whether you&apos;re here for a six month cleaning or a complete smile makeover,
                   our promise is the same: we&apos;ll listen carefully, treat you gently, and never
-                  stop until your smile — and your experience — exceeds expectations.
+                  stop until your smile, and your experience, exceeds expectations.
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -139,12 +139,12 @@ export default function AboutPage() {
                 <Users className="h-7 w-7" />
               </span>
               <h2 className="mt-5 text-2xl font-semibold text-ink sm:text-3xl">
-                More than a dental office — part of the community
+                More than a dental office, part of the community
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-slate-600">
                 We&apos;re honored to care for the families, teachers, first responders, and
                 small-business owners who make Texas City special. When you sit in our chair,
-                you&apos;re not a chart number — you&apos;re our neighbor.
+                you&apos;re not a chart number, you&apos;re our neighbor.
               </p>
             </div>
           </Reveal>

@@ -23,7 +23,7 @@ const dayMap: Record<string, string> = {
   Sunday: "Sunday",
 };
 
-/** Dentist / LocalBusiness schema — the backbone of local SEO rich results. */
+/** Dentist / LocalBusiness schema, the backbone of local SEO rich results. */
 export function LocalBusinessSchema() {
   const openingHours = site.hours
     .filter((h) => h.open && h.close)

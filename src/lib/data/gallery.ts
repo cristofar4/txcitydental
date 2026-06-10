@@ -36,7 +36,7 @@ export const galleryCases: GalleryCase[] = [
     title: "Porcelain Veneers",
     treatment: "Cosmetic Dentistry",
     description:
-      "A full smile makeover with hand-crafted porcelain veneers — closing gaps and brightening shade for a luminous, natural result.",
+      "A full smile makeover with hand crafted porcelain veneers, closing gaps and brightening shade for a luminous, natural result.",
     doctor: "Dr. Sushmita Rath",
     accent: "gold",
     before: { shade: 0.35, straightness: 0.45, gap: 0.7, chips: true },
@@ -47,7 +47,7 @@ export const galleryCases: GalleryCase[] = [
     title: "Professional Whitening",
     treatment: "Teeth Whitening",
     description:
-      "Years of coffee and wine stains lifted in a single in-office whitening session for a noticeably brighter smile.",
+      "Years of coffee and wine stains lifted in a single in office whitening session for a noticeably brighter smile.",
     doctor: "Dr. Sushmita Rath",
     accent: "teal",
     before: { shade: 0.3, straightness: 0.9, gap: 0.1, chips: false },
@@ -58,7 +58,7 @@ export const galleryCases: GalleryCase[] = [
     title: "Clear Aligner Therapy",
     treatment: "Orthodontics",
     description:
-      "Crowded, overlapping front teeth gently guided into perfect alignment with a discreet clear-aligner plan.",
+      "Crowded, overlapping front teeth gently guided into perfect alignment with a discreet clear aligner plan.",
     doctor: "Dr. Kapil Mangla",
     accent: "ocean",
     before: { shade: 0.7, straightness: 0.2, gap: 0.15, chips: false },
@@ -69,7 +69,7 @@ export const galleryCases: GalleryCase[] = [
     title: "Single Tooth Implant",
     treatment: "Oral Surgery",
     description:
-      "A missing front tooth restored with a natural-looking implant crown that blends seamlessly with the surrounding smile.",
+      "A missing front tooth restored with a natural looking implant crown that blends seamlessly with the surrounding smile.",
     doctor: "Dr. Kamran Shaikh",
     accent: "indigo",
     before: { shade: 0.6, straightness: 0.85, gap: 0.85, chips: true },
@@ -91,7 +91,7 @@ export const galleryCases: GalleryCase[] = [
     title: "Composite Bonding",
     treatment: "Cosmetic Dentistry",
     description:
-      "A chipped front tooth and small gaps refined in a single visit with artful, tooth-colored composite bonding.",
+      "A chipped front tooth and small gaps refined in a single visit with artful, tooth colored composite bonding.",
     doctor: "Dr. Sushmita Rath",
     accent: "gold",
     before: { shade: 0.65, straightness: 0.7, gap: 0.5, chips: true },

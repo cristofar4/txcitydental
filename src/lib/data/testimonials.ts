@@ -1,6 +1,6 @@
 /**
  * Patient testimonials for the reviews carousel and the Reviews page.
- * Placeholder content representative of a 5-star local dental practice —
+ * Placeholder content representative of a 5 star local dental practice , 
  * swap with real, attributed Google reviews before launch.
  */
 
@@ -10,7 +10,7 @@ export interface Testimonial {
   location: string;
   rating: number;
   quote: string;
-  /** Short label for what they came in for — adds credibility + context. */
+  /** Short label for what they came in for, adds credibility + context. */
   treatment: string;
   accent: "ocean" | "teal" | "indigo" | "gold";
 }
@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
     location: "Texas City, TX",
     rating: 5,
     quote:
-      "Hands down the best dental experience I've ever had. From the front desk to Dr. Mangla, everyone made me feel cared for. My veneers look completely natural — I can't stop smiling.",
+      "Hands down the best dental experience I've ever had. From the front desk to Dr. Mangla, everyone made me feel cared for. My veneers look completely natural, I can't stop smiling.",
     treatment: "Porcelain Veneers",
     accent: "ocean",
   },
@@ -42,7 +42,7 @@ export const testimonials: Testimonial[] = [
     location: "Texas City, TX",
     rating: 5,
     quote:
-      "We bring all three of our kids here and they genuinely look forward to it. Dr. Rath is so gentle and patient. The office is spotless and gorgeous — it feels like a spa, not a clinic.",
+      "We bring all three of our kids here and they genuinely look forward to it. Dr. Rath is so gentle and patient. The office is spotless and gorgeous, it feels like a spa, not a clinic.",
     treatment: "Family & Pediatric Care",
     accent: "indigo",
   },
@@ -62,7 +62,7 @@ export const testimonials: Testimonial[] = [
     location: "Texas City, TX",
     rating: 5,
     quote:
-      "My Invisalign results are incredible and the whole process was easier than I imagined. They mapped everything out in 3D so I knew exactly what to expect. Truly a five-star team.",
+      "My Invisalign results are incredible and the whole process was easier than I imagined. They mapped everything out in 3D so I knew exactly what to expect. Truly a five star team.",
     treatment: "Clear Aligners",
     accent: "ocean",
   },

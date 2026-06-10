@@ -16,7 +16,7 @@ export default function NotFound() {
           This page took a coffee break
         </h1>
         <p className="mx-auto mt-4 max-w-md text-slate-600">
-          We couldn&apos;t find what you were looking for — but your perfect smile is just a click away.
+          We couldn&apos;t find what you were looking for, but your perfect smile is just a click away.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button href="/">

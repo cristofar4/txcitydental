@@ -44,7 +44,7 @@ export function Logo({
 
   if (href === null) return content;
   return (
-    <Link href={href} aria-label="Texas City Dental — home" className="inline-flex">
+    <Link href={href} aria-label="Texas City Dental, home" className="inline-flex">
       {content}
     </Link>
   );

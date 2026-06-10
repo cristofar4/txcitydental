@@ -19,7 +19,7 @@ export interface Doctor {
   education: string[];
   funFact: string;
   yearsExperience: number;
-  /** Optional portrait path — falls back to a branded monogram avatar if absent. */
+  /** Optional portrait path, falls back to a branded monogram avatar if absent. */
   photo?: string;
 }
 
@@ -31,10 +31,10 @@ export const doctors: Doctor[] = [
     role: "Founder & Lead Dentist",
     initials: "KM",
     accent: "ocean",
-    specialties: ["General Dentistry", "Dental Implants", "Full-Mouth Restoration"],
+    specialties: ["General Dentistry", "Dental Implants", "Full Mouth Restoration"],
     bio: [
-      "Dr. Kapil Mangla founded Texas City Dental with a simple belief: world-class dentistry should feel warm, personal, and completely unhurried. Over more than a decade in practice, he has helped thousands of Texas City families rediscover healthy, confident smiles.",
-      "With advanced training in implant and restorative dentistry, Dr. Mangla is known for his meticulous, gentle technique and his gift for putting even the most anxious patients at ease. He leads the team's commitment to continuing education and modern, evidence-based care.",
+      "Dr. Kapil Mangla founded Texas City Dental with a simple belief: world class dentistry should feel warm, personal, and completely unhurried. Over more than a decade in practice, he has helped thousands of Texas City families rediscover healthy, confident smiles.",
+      "With advanced training in implant and restorative dentistry, Dr. Mangla is known for his meticulous, gentle technique and his gift for putting even the most anxious patients at ease. He leads the team's commitment to continuing education and modern, evidence based care.",
     ],
     education: [
       "Doctor of Dental Surgery (DDS)",
@@ -53,7 +53,7 @@ export const doctors: Doctor[] = [
     accent: "teal",
     specialties: ["Cosmetic Dentistry", "Smile Design", "Family Dentistry"],
     bio: [
-      "Dr. Sushmita Rath brings an artist's eye to everything she does. Specializing in cosmetic and family dentistry, she designs smiles that look effortlessly natural — beautifully balanced to each patient's face and personality.",
+      "Dr. Sushmita Rath brings an artist's eye to everything she does. Specializing in cosmetic and family dentistry, she designs smiles that look effortlessly natural, beautifully balanced to each patient's face and personality.",
       "Patients love Dr. Rath's calm, attentive chairside manner and her talent for explaining every option clearly. From a child's first visit to a complete smile makeover, she treats every patient like family.",
     ],
     education: [
@@ -61,7 +61,7 @@ export const doctors: Doctor[] = [
       "Continuing education in Cosmetic & Aesthetic Dentistry",
       "Member, Academy of General Dentistry",
     ],
-    funFact: "Sketches portraits in her free time — the same eye she brings to smile design.",
+    funFact: "Sketches portraits in her free time, the same eye she brings to smile design.",
     yearsExperience: 11,
   },
   {
@@ -81,7 +81,7 @@ export const doctors: Doctor[] = [
       "Advanced training in Oral Surgery & Sedation",
       "Member, American Dental Association",
     ],
-    funFact: "A weekend long-distance runner who brings the same endurance to patient care.",
+    funFact: "A weekend long distance runner who brings the same endurance to patient care.",
     yearsExperience: 9,
   },
 ];

@@ -33,13 +33,17 @@ export const site = {
     "https://www.google.com/maps?q=3448+Palmer+Hwy,+Texas+City,+TX+77590&output=embed",
   mapsDirections:
     "https://www.google.com/maps/dir/?api=1&destination=3448+Palmer+Hwy,+Texas+City,+TX+77590",
+  // Background hero video. Drop a practice walkthrough at public/videos/hero.mp4
+  // (or point this at any hosted .mp4). Until then the hero shows a cinematic,
+  // slowly panning photo, so it always looks like motion footage.
+  heroVideo: "/videos/hero.mp4",
   hours: [
-    { day: "Monday", open: "9:00 AM", close: "5:00 PM", short: "9 AM – 5 PM" },
-    { day: "Tuesday", open: "10:00 AM", close: "6:00 PM", short: "10 AM – 6 PM" },
-    { day: "Wednesday", open: "9:00 AM", close: "5:00 PM", short: "9 AM – 5 PM" },
-    { day: "Thursday", open: "10:00 AM", close: "6:00 PM", short: "10 AM – 6 PM" },
-    { day: "Friday", open: "9:00 AM", close: "5:00 PM", short: "9 AM – 5 PM" },
-    { day: "Saturday", open: "8:00 AM", close: "2:00 PM", short: "8 AM – 2 PM" },
+    { day: "Monday", open: "9:00 AM", close: "5:00 PM", short: "9 AM to 5 PM" },
+    { day: "Tuesday", open: "10:00 AM", close: "6:00 PM", short: "10 AM to 6 PM" },
+    { day: "Wednesday", open: "9:00 AM", close: "5:00 PM", short: "9 AM to 5 PM" },
+    { day: "Thursday", open: "10:00 AM", close: "6:00 PM", short: "10 AM to 6 PM" },
+    { day: "Friday", open: "9:00 AM", close: "5:00 PM", short: "9 AM to 5 PM" },
+    { day: "Saturday", open: "8:00 AM", close: "2:00 PM", short: "8 AM to 2 PM" },
     { day: "Sunday", open: null, close: null, short: "Closed" },
   ],
   social: {
