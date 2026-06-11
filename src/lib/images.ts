@@ -25,7 +25,7 @@ export const photos = {
   reception: `${U}1631815588090-d4bfec5b1ccb`, // welcoming reception
 
   // Section imagery
-  comfort: `${U}1581585095917-2d5cd1b2d6d0`,
+  comfort: `${U}1494790108377-be9c29b29330`,
   technology: `${U}1571772996211-2f02c9727629`,
   family: `${U}1595152772835-219674b2a8a6`,
 
