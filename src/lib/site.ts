@@ -33,9 +33,9 @@ export const site = {
     "https://www.google.com/maps?q=3448+Palmer+Hwy,+Texas+City,+TX+77590&output=embed",
   mapsDirections:
     "https://www.google.com/maps/dir/?api=1&destination=3448+Palmer+Hwy,+Texas+City,+TX+77590",
-  // Background hero video. Drop a practice walkthrough at public/videos/hero.mp4
-  // (or point this at any hosted .mp4). Until then the hero shows a cinematic,
-  // slowly panning photo, so it always looks like motion footage.
+  // Background hero video served from /public. Plays a looping, muted clip in
+  // the homepage hero; if the file is missing the hero shows a designed dark
+  // backdrop instead. Swap the file or repoint this to any hosted .mp4.
   heroVideo: "/videos/dentist.mp4",
   hours: [
     { day: "Monday", open: "9:00 AM", close: "5:00 PM", short: "9 AM to 5 PM" },
