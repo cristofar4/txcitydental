@@ -58,9 +58,13 @@ export function Photo({
       {/* Branded fallback, always present, visible while loading or on error */}
       <div className="absolute inset-0" aria-hidden="true">
         {fallback ?? (
-          <div className="relative h-full w-full" style={{ background: accentGradient(fallbackAccent) }}>
-            <div className="absolute inset-0 bg-dots opacity-20" />
-            <ToothMark className="absolute -right-6 -bottom-6 h-40 w-40 rotate-12 text-white/10" />
+          <div className="relative h-full w-full overflow-hidden" style={{ background: accentGradient(fallbackAccent) }}>
+            <div className="absolute inset-0 bg-grid-dark opacity-30" />
+            <div className="absolute -left-12 -top-12 h-2/3 w-2/3 rounded-full bg-white/15 blur-3xl" />
+            <div className="absolute -bottom-16 -right-10 h-2/3 w-2/3 rounded-full bg-black/15 blur-3xl" />
+            <div className="absolute inset-0 grid place-items-center">
+              <ToothMark className="h-24 w-24 text-white/25" />
+            </div>
           </div>
         )}
       </div>
