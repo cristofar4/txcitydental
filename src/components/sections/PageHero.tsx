@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { HeroVideo } from "@/components/home/HeroVideo";
 
 /** Shared dark hero for interior pages, clears the floating header. */
 export function PageHero({
@@ -20,10 +21,20 @@ export function PageHero({
   className?: string;
 }) {
   return (
-    <section className={cn("noise relative isolate overflow-hidden bg-aurora animate-aurora pb-20 pt-36 lg:pb-24 lg:pt-48", className)}>
-      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50 mask-fade-b" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-20 top-10 h-80 w-80 rounded-full bg-electric-500/25 blur-[110px] animate-glow" aria-hidden="true" />
-      <div className="pointer-events-none absolute -left-20 top-28 h-80 w-80 rounded-full bg-iris-500/25 blur-[120px] animate-glow [animation-delay:1.5s]" aria-hidden="true" />
+    <section className={cn("noise relative isolate overflow-hidden bg-void pb-20 pt-36 lg:pb-24 lg:pt-48", className)}>
+      {/* Moving video backdrop with the same 3D camera feel as the home hero */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute inset-0 bg-aurora animate-aurora" aria-hidden="true" />
+        <div className="absolute inset-0 bg-mesh opacity-70" aria-hidden="true" />
+        <HeroVideo />
+        {/* heavier veil here so the centered heading stays crisp over the video */}
+        <div className="absolute inset-0 bg-void/72" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-void/55" aria-hidden="true" />
+        <div className="absolute inset-0 bg-grid-dark opacity-20 mask-fade-b" aria-hidden="true" />
+      </div>
+
+      <div className="pointer-events-none absolute -right-20 top-10 h-80 w-80 rounded-full bg-electric-500/20 blur-[110px] animate-glow" aria-hidden="true" />
+      <div className="pointer-events-none absolute -left-20 top-28 h-80 w-80 rounded-full bg-iris-500/20 blur-[120px] animate-glow [animation-delay:1.5s]" aria-hidden="true" />
 
       <Container className="relative">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
