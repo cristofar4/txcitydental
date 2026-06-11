@@ -68,6 +68,7 @@
   --animate-glow: glow-pulse 4s ease-in-out infinite;
   --animate-rise: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-kenburns: kenburns 26s ease-in-out infinite alternate;
+  --animate-camera3d: camera3d 22s ease-in-out infinite;
 }
 
 /* Map next/font CSS variables onto the type scale */
@@ -278,4 +279,10 @@
 @keyframes kenburns {
   from { transform: scale(1.06) translate3d(0, 0, 0); }
   to { transform: scale(1.2) translate3d(-2%, -1.5%, 0); }
+}
+/* Ambient "camera" drift: slow zoom, pan and a hint of roll for a 3D feel */
+@keyframes camera3d {
+  0%   { transform: scale(1.28) translate3d(-1.5%, -1%, 0) rotateZ(0deg); }
+  50%  { transform: scale(1.36) translate3d(1.5%, 1.2%, 0) rotateZ(0.7deg); }
+  100% { transform: scale(1.28) translate3d(-1.5%, -1%, 0) rotateZ(0deg); }
 }

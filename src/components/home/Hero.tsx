@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { Magnetic, TextReveal, Marquee } from "@/components/ui/motion";
 import { MonogramAvatar } from "@/components/art/Portrait";
+import { HeroVideo } from "@/components/home/HeroVideo";
 
 const reviewers = [
   { initials: "MG", accent: "ocean" as const },
@@ -20,17 +21,8 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-aurora animate-aurora" aria-hidden="true" />
         <div className="absolute inset-0 bg-mesh opacity-70" aria-hidden="true" />
-        {/* Plays site.heroVideo when available (drop one at public/videos/hero.mp4);
-            otherwise stays transparent so the designed backdrop above shows. */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src={site.heroVideo} type="video/mp4" />
-        </video>
+        {/* Looping practice video with ambient 3D camera drift and cursor tilt */}
+        <HeroVideo />
         {/* legibility overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-void via-void/75 to-void/45" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-r from-void/75 via-transparent to-void/25" aria-hidden="true" />
