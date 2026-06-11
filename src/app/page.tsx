@@ -21,6 +21,7 @@ import { doctors } from "@/lib/data/doctors";
 import { testimonials } from "@/lib/data/testimonials";
 import { faqs } from "@/lib/data/faqs";
 import { galleryCases } from "@/lib/data/gallery";
+import { getGallerySmile } from "@/lib/images";
 
 export default function HomePage() {
   const previewCases = galleryCases.slice(0, 2);
@@ -99,10 +100,10 @@ export default function HomePage() {
             lead="Drag the slider to reveal stunning before and after results from real treatments at Texas City Dental."
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {previewCases.map((c) => (
+            {previewCases.map((c, i) => (
               <Reveal key={c.id}>
                 <figure className="rounded-[2rem] bg-white/5 p-3 ring-1 ring-white/10 backdrop-blur">
-                  <BeforeAfter beforeImg={c.beforeImg} afterImg={c.afterImg} uid={c.id} />
+                  <BeforeAfter photo={getGallerySmile(i)} beforeImg={c.beforeImg} afterImg={c.afterImg} uid={c.id} />
                   <figcaption className="flex items-center justify-between px-3 py-3">
                     <div>
                       <p className="font-semibold text-white">{c.title}</p>

@@ -40,14 +40,15 @@ export const photos = {
   } as Record<string, string>,
 
   // Smile gallery photos (one real smile per case; the slider tints the
-  // "before" side duller and the "after" side brighter for a true transformation)
+  // "before" side warm and dull and the "after" side bright and white).
+  // Distinct from the doctor portraits so no face is reused.
   gallerySmiles: [
-    `${U}1606811971618-4486d14f3f99`,
-    `${U}1612349317150-e413f6a5b16d`,
-    `${U}1542596594-649edbc13630`,
-    `${U}1601933470928-c6ee329c2f31`,
-    `${U}1588776814546-1ffcf47267a5`,
-    `${U}1609840114035-3c981b782dfe`,
+    `${U}1494790108377-be9c29b29330`,
+    `${U}1500648767791-00dcc994a43e`,
+    `${U}1438761681033-6461ffad8d80`,
+    `${U}1507003211169-0a1dd7228f2d`,
+    `${U}1544005313-94ddf0286df2`,
+    `${U}1487412720507-e7ab37603c6f`,
   ],
 
   // Reviewer avatars (stable Unsplash portraits)
