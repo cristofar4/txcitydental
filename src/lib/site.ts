@@ -36,7 +36,7 @@ export const site = {
   // Background hero video. Drop a practice walkthrough at public/videos/hero.mp4
   // (or point this at any hosted .mp4). Until then the hero shows a cinematic,
   // slowly panning photo, so it always looks like motion footage.
-  heroVideo: "/videos/hero.mp4",
+  heroVideo: "/videos/dentist.mp4",
   hours: [
     { day: "Monday", open: "9:00 AM", close: "5:00 PM", short: "9 AM to 5 PM" },
     { day: "Tuesday", open: "10:00 AM", close: "6:00 PM", short: "10 AM to 6 PM" },
