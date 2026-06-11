@@ -3,21 +3,20 @@
 import { useCallback, useRef, useState } from "react";
 import { MoveHorizontal } from "lucide-react";
 import { Photo } from "@/components/media/Photo";
+import { SmileGraphic } from "@/components/art/SmileGraphic";
 
 /**
- * Draggable before/after comparison built from real photography. A single smile
- * photo is shown on both sides; the "before" side is tinted duller and slightly
- * yellow while the "after" side is brightened, so it reads as a real
- * transformation. Pass explicit beforeImg / afterImg for true clinical pairs.
+ * Draggable before/after comparison. By default it shows a teeth whitening
+ * transformation, stained / brown teeth on the "before" side and bright white
+ * on the "after" side. Pass beforeImg / afterImg to use real clinical photos
+ * instead.
  */
 export function BeforeAfter({
-  photo,
   beforeImg,
   afterImg,
   uid,
   className,
 }: {
-  photo?: string;
   beforeImg?: string;
   afterImg?: string;
   uid: string;
@@ -26,9 +25,6 @@ export function BeforeAfter({
   const [pos, setPos] = useState(52);
   const [dragging, setDragging] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-
-  const afterSrc = afterImg ?? photo;
-  const beforeSrc = beforeImg ?? photo;
 
   const update = useCallback((clientX: number) => {
     const el = ref.current;
@@ -58,31 +54,25 @@ export function BeforeAfter({
       onPointerUp={() => setDragging(false)}
       onPointerCancel={() => setDragging(false)}
     >
-      {/* AFTER (bright, the result) */}
+      {/* AFTER (white teeth, the result) */}
       <div className="absolute inset-0">
-        <Photo
-          src={afterSrc}
-          alt="After treatment, a bright, confident smile"
-          sizes="(max-width:768px) 100vw, 50vw"
-          fallbackAccent="teal"
-          className="h-full w-full"
-          imgClassName="brightness-105 saturate-[1.08] contrast-[1.05]"
-        />
+        {afterImg ? (
+          <Photo src={afterImg} alt="After treatment, a bright white smile" sizes="(max-width:768px) 100vw, 50vw" fallbackAccent="teal" className="h-full w-full" />
+        ) : (
+          <SmileGraphic variant="after" uid={`${uid}-a`} className="h-full w-full" />
+        )}
         <span className="absolute right-4 top-4 rounded-full bg-brand-600/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur">
           After
         </span>
       </div>
 
-      {/* BEFORE (duller, clipped overlay) */}
+      {/* BEFORE (stained / brown teeth, clipped overlay) */}
       <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
-        <Photo
-          src={beforeSrc}
-          alt="Before treatment"
-          sizes="(max-width:768px) 100vw, 50vw"
-          fallbackAccent="gold"
-          className="h-full w-full"
-          imgClassName="sepia-[.42] saturate-[.72] brightness-90 contrast-[.95]"
-        />
+        {beforeImg ? (
+          <Photo src={beforeImg} alt="Before treatment, stained teeth" sizes="(max-width:768px) 100vw, 50vw" fallbackAccent="gold" className="h-full w-full" />
+        ) : (
+          <SmileGraphic variant="before" uid={`${uid}-b`} className="h-full w-full" />
+        )}
         <span className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ink backdrop-blur">
           Before
         </span>
@@ -108,8 +98,6 @@ export function BeforeAfter({
           <MoveHorizontal className="h-5 w-5" />
         </button>
       </div>
-      {/* uid kept for stable identity across instances */}
-      <span hidden>{uid}</span>
     </div>
   );
 }
