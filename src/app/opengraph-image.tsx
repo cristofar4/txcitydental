@@ -21,7 +21,7 @@ export default function OgImage() {
           justifyContent: "space-between",
           padding: "80px",
           background:
-            "radial-gradient(at 20% 20%, #2167d6 0px, transparent 45%), radial-gradient(at 85% 15%, #5ea5f6 0px, transparent 40%), radial-gradient(at 70% 90%, #c9a85f55 0px, transparent 45%), #0b1f3a",
+            "radial-gradient(at 20% 20%, #10b981 0px, transparent 45%), radial-gradient(at 85% 15%, #34d399 0px, transparent 40%), radial-gradient(at 70% 90%, #c9a85f55 0px, transparent 45%), #052e23",
           color: "white",
           fontFamily: "sans-serif",
         }}
@@ -32,7 +32,7 @@ export default function OgImage() {
               width: 76,
               height: 76,
               borderRadius: 20,
-              background: "linear-gradient(135deg, #5ea5f6, #1c478f)",
+              background: "linear-gradient(135deg, #34d399, #047857)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -44,7 +44,7 @@ export default function OgImage() {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ fontSize: 30, fontWeight: 700 }}>Texas City Dental</span>
-            <span style={{ fontSize: 18, letterSpacing: 6, color: "#91c5fb" }}>
+            <span style={{ fontSize: 18, letterSpacing: 6, color: "#6ee7b7" }}>
               LUXURY DENTISTRY
             </span>
           </div>
@@ -54,7 +54,7 @@ export default function OgImage() {
           <span style={{ fontSize: 68, fontWeight: 800, lineHeight: 1.05, maxWidth: 900 }}>
             A smile worth showing off.
           </span>
-          <span style={{ fontSize: 28, color: "#bedcfd", maxWidth: 780 }}>
+          <span style={{ fontSize: 28, color: "#a7f3d0", maxWidth: 780 }}>
             Premium general, cosmetic & family dentistry in Texas City, TX.
           </span>
         </div>
@@ -66,7 +66,7 @@ export default function OgImage() {
             </svg>
             <span style={{ color: "#e7d4a0", fontWeight: 700 }}>{site.stats.rating}/5</span>
           </div>
-          <span style={{ color: "#bedcfd" }}>{site.address.full}</span>
+          <span style={{ color: "#a7f3d0" }}>{site.address.full}</span>
           <span style={{ color: "white", fontWeight: 700 }}>{site.phone}</span>
         </div>
       </div>

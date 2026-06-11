@@ -1,26 +1,23 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { MoveHorizontal } from "lucide-react";
-import { SmileArt } from "@/components/art/SmileArt";
-import type { SmileVariant } from "@/lib/data/gallery";
+import { Photo } from "@/components/media/Photo";
 
 /**
- * Draggable before/after comparison. Works with pointer + touch + keyboard and
- * renders either procedural SmileArt or real photography when image paths are
- * supplied.
+ * Draggable before/after comparison built from real photography. A single smile
+ * photo is shown on both sides; the "before" side is tinted duller and slightly
+ * yellow while the "after" side is brightened, so it reads as a real
+ * transformation. Pass explicit beforeImg / afterImg for true clinical pairs.
  */
 export function BeforeAfter({
-  before,
-  after,
+  photo,
   beforeImg,
   afterImg,
   uid,
   className,
 }: {
-  before: SmileVariant;
-  after: SmileVariant;
+  photo?: string;
   beforeImg?: string;
   afterImg?: string;
   uid: string;
@@ -29,6 +26,9 @@ export function BeforeAfter({
   const [pos, setPos] = useState(52);
   const [dragging, setDragging] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  const afterSrc = afterImg ?? photo;
+  const beforeSrc = beforeImg ?? photo;
 
   const update = useCallback((clientX: number) => {
     const el = ref.current;
@@ -48,7 +48,7 @@ export function BeforeAfter({
   return (
     <div
       ref={ref}
-      className={`relative aspect-[4/3] w-full touch-none select-none overflow-hidden rounded-3xl bg-slate-100 shadow-card ${className ?? ""}`}
+      className={`relative aspect-[4/3] w-full touch-none select-none overflow-hidden rounded-3xl bg-ink shadow-card ${className ?? ""}`}
       onPointerDown={(e) => {
         (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
         setDragging(true);
@@ -58,28 +58,31 @@ export function BeforeAfter({
       onPointerUp={() => setDragging(false)}
       onPointerCancel={() => setDragging(false)}
     >
-      {/* AFTER (base layer) */}
+      {/* AFTER (bright, the result) */}
       <div className="absolute inset-0">
-        {afterImg ? (
-          <Image src={afterImg} alt="After treatment" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
-        ) : (
-          <SmileArt variant={after} uid={`${uid}-after`} className="h-full w-full" />
-        )}
-        <span className="absolute right-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur">
+        <Photo
+          src={afterSrc}
+          alt="After treatment, a bright, confident smile"
+          sizes="(max-width:768px) 100vw, 50vw"
+          fallbackAccent="teal"
+          className="h-full w-full"
+          imgClassName="brightness-105 saturate-[1.08] contrast-[1.05]"
+        />
+        <span className="absolute right-4 top-4 rounded-full bg-brand-600/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur">
           After
         </span>
       </div>
 
-      {/* BEFORE (clipped overlay) */}
-      <div
-        className="absolute inset-0"
-        style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
-      >
-        {beforeImg ? (
-          <Image src={beforeImg} alt="Before treatment" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
-        ) : (
-          <SmileArt variant={before} uid={`${uid}-before`} className="h-full w-full" />
-        )}
+      {/* BEFORE (duller, clipped overlay) */}
+      <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
+        <Photo
+          src={beforeSrc}
+          alt="Before treatment"
+          sizes="(max-width:768px) 100vw, 50vw"
+          fallbackAccent="gold"
+          className="h-full w-full"
+          imgClassName="sepia-[.42] saturate-[.72] brightness-90 contrast-[.95]"
+        />
         <span className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ink backdrop-blur">
           Before
         </span>
@@ -87,7 +90,7 @@ export function BeforeAfter({
 
       {/* Divider + handle */}
       <div
-        className="absolute inset-y-0 z-10 w-0.5 -translate-x-1/2 bg-white shadow-[0_0_0_1px_rgba(11,31,58,0.1)]"
+        className="absolute inset-y-0 z-10 w-0.5 -translate-x-1/2 bg-white shadow-[0_0_0_1px_rgba(12,31,26,0.12)]"
         style={{ left: `${pos}%` }}
       >
         <button
@@ -105,6 +108,8 @@ export function BeforeAfter({
           <MoveHorizontal className="h-5 w-5" />
         </button>
       </div>
+      {/* uid kept for stable identity across instances */}
+      <span hidden>{uid}</span>
     </div>
   );
 }

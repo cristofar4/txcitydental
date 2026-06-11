@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Stethoscope } from "lucide-react";
 import { BeforeAfter } from "@/components/gallery/BeforeAfter";
 import { getAccent } from "@/lib/accents";
+import { getGallerySmile } from "@/lib/images";
 import type { GalleryCase } from "@/lib/data/gallery";
 
 export function GalleryGrid({ cases }: { cases: GalleryCase[] }) {
@@ -53,7 +54,12 @@ export function GalleryGrid({ cases }: { cases: GalleryCase[] }) {
                 className="overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-card"
               >
                 <div className="p-3">
-                  <BeforeAfter before={c.before} after={c.after} beforeImg={c.beforeImg} afterImg={c.afterImg} uid={c.id} />
+                  <BeforeAfter
+                    photo={getGallerySmile(cases.indexOf(c))}
+                    beforeImg={c.beforeImg}
+                    afterImg={c.afterImg}
+                    uid={c.id}
+                  />
                 </div>
                 <figcaption className="px-5 pb-6 pt-2">
                   <div className="flex items-center justify-between gap-3">

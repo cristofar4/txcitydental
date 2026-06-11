@@ -2,6 +2,9 @@
  * Accent palette for service cards, doctor avatars, testimonials and gallery
  * cases. Returned as raw hex so components can build gradients via inline
  * styles, this sidesteps Tailwind's static class detection for dynamic keys.
+ *
+ * Themed in the emerald / teal / jade / champagne family so the whole UI stays
+ * cohesive and premium (no stray blues or purples).
  */
 
 export type AccentKey =
@@ -25,12 +28,12 @@ export interface Accent {
 }
 
 export const accents: Record<AccentKey, Accent> = {
-  azure: { from: "#3884ef", to: "#1c52b0", soft: "#eaf2fe", ring: "#bedcfd", text: "#1c52b0" },
-  ocean: { from: "#2167d6", to: "#132646", soft: "#e9f0fc", ring: "#bcd3f6", text: "#1c478f" },
-  teal: { from: "#22b8c4", to: "#0e7490", soft: "#e2f7f9", ring: "#b6e9ee", text: "#0e7490" },
-  indigo: { from: "#6366f1", to: "#3730a3", soft: "#ecedfd", ring: "#c9caf8", text: "#4338ca" },
-  violet: { from: "#a855f7", to: "#6d28d9", soft: "#f4ecfe", ring: "#e0c9fb", text: "#6d28d9" },
-  sky: { from: "#38bdf8", to: "#0284c7", soft: "#e4f5fe", ring: "#bce6fb", text: "#0369a1" },
+  azure: { from: "#10b981", to: "#047857", soft: "#e7f8f0", ring: "#a7f3d0", text: "#047857" },
+  ocean: { from: "#0d9488", to: "#064e3b", soft: "#e3f5f0", ring: "#99e7d8", text: "#0f766e" },
+  teal: { from: "#14b8a6", to: "#0f766e", soft: "#e0f7f3", ring: "#99eede", text: "#0f766e" },
+  indigo: { from: "#34a884", to: "#115e45", soft: "#e6f6ee", ring: "#a7e8cf", text: "#15643f" },
+  violet: { from: "#2bb3a3", to: "#0f5e57", soft: "#e2f5f2", ring: "#a3e8df", text: "#0f766e" },
+  sky: { from: "#5eead4", to: "#14b8a6", soft: "#e0fbf4", ring: "#b6f0e4", text: "#0f766e" },
   gold: { from: "#d9bf7c", to: "#ad8c45", soft: "#f7f0dd", ring: "#ecdcae", text: "#8a6d2f" },
 };
 

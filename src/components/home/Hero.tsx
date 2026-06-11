@@ -1,33 +1,27 @@
 import { Phone, CalendarHeart, Star, ShieldCheck, Sparkles, Activity, ArrowRight } from "lucide-react";
 import { site } from "@/lib/site";
-import { photos, getReviewerPhoto } from "@/lib/images";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { Magnetic, TextReveal, Marquee } from "@/components/ui/motion";
-import { Photo } from "@/components/media/Photo";
 import { MonogramAvatar } from "@/components/art/Portrait";
 
-const reviewerInitials = ["MG", "JR", "PN", "HB"];
-const reviewerAccents = ["ocean", "teal", "indigo", "gold"] as const;
+const reviewers = [
+  { initials: "MG", accent: "ocean" as const },
+  { initials: "JR", accent: "teal" as const },
+  { initials: "PN", accent: "indigo" as const },
+  { initials: "HB", accent: "gold" as const },
+];
 
 export function Hero() {
   return (
     <section className="noise relative isolate flex min-h-[100svh] items-center overflow-hidden bg-void pt-28 lg:pt-32">
-      {/* cinematic background: panning photo + optional looping video */}
+      {/* designed cinematic backdrop; a looping practice video plays on top when present */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 animate-kenburns">
-          <Photo
-            src={photos.heroSmile}
-            alt=""
-            priority
-            sizes="100vw"
-            fallbackAccent="ocean"
-            className="h-full w-full"
-          />
-        </div>
-        {/* Plays a looping practice video when one is present at site.heroVideo;
-            otherwise stays transparent and the panning photo above shows through. */}
+        <div className="absolute inset-0 bg-aurora animate-aurora" aria-hidden="true" />
+        <div className="absolute inset-0 bg-mesh opacity-70" aria-hidden="true" />
+        {/* Plays site.heroVideo when available (drop one at public/videos/hero.mp4);
+            otherwise stays transparent so the designed backdrop above shows. */}
         <video
           autoPlay
           muted
@@ -37,10 +31,9 @@ export function Hero() {
         >
           <source src={site.heroVideo} type="video/mp4" />
         </video>
-        {/* legibility + brand overlays */}
+        {/* legibility overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-void via-void/75 to-void/45" aria-hidden="true" />
-        <div className="absolute inset-0 bg-gradient-to-r from-void/80 via-transparent to-void/30" aria-hidden="true" />
-        <div className="absolute inset-0 bg-aurora opacity-30 mix-blend-screen animate-aurora" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-r from-void/75 via-transparent to-void/25" aria-hidden="true" />
         <div className="absolute inset-0 bg-grid-dark opacity-20 mask-fade-b" aria-hidden="true" />
       </div>
 
@@ -98,16 +91,13 @@ export function Hero() {
             <div className="mt-11 flex items-center justify-center">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-3">
-                  {reviewerInitials.map((ini, i) => (
-                    <span key={ini} className="relative h-11 w-11 overflow-hidden rounded-full ring-2 ring-void">
-                      <Photo
-                        src={getReviewerPhoto(i)}
-                        alt=""
-                        sizes="44px"
-                        className="h-full w-full rounded-full"
-                        fallback={<MonogramAvatar initials={ini} accent={reviewerAccents[i]} className="h-full w-full text-xs" />}
-                      />
-                    </span>
+                  {reviewers.map((r) => (
+                    <MonogramAvatar
+                      key={r.initials}
+                      initials={r.initials}
+                      accent={r.accent}
+                      className="h-11 w-11 text-xs ring-2 ring-void"
+                    />
                   ))}
                 </div>
                 <div className="text-left">
@@ -125,19 +115,6 @@ export function Hero() {
           </Reveal>
         </div>
       </Container>
-
-      {/* now playing pill */}
-      <div className="pointer-events-none absolute bottom-7 left-6 hidden items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-brand-100/90 backdrop-blur lg:inline-flex">
-        <span className="h-2 w-2 animate-pulse rounded-full bg-red-400" />
-        Inside our studio
-      </div>
-
-      {/* scroll cue */}
-      <div className="pointer-events-none absolute bottom-7 left-1/2 hidden -translate-x-1/2 lg:block" aria-hidden="true">
-        <span className="flex h-11 w-7 items-start justify-center rounded-full border border-white/25 p-1.5">
-          <span className="h-2 w-1 animate-bounce rounded-full bg-white/70" />
-        </span>
-      </div>
     </section>
   );
 }
@@ -153,14 +130,14 @@ export function TrustBar() {
     { icon: Activity, label: "Evening & Saturday Hours" },
   ];
   return (
-    <div className="relative overflow-hidden border-b border-slate-100 bg-white py-5">
+    <div className="relative overflow-hidden border-b border-brand-100/60 bg-cloud py-5">
       <div className="mask-fade-x">
         <Marquee className="items-center gap-10 pr-10">
           {items.map((item, i) => {
             const Icon = item.icon;
             return (
               <span key={i} className="flex shrink-0 items-center gap-2.5 text-sm font-medium text-slate-600">
-                <Icon className="h-5 w-5 text-brand-500" />
+                <Icon className="h-5 w-5 text-brand-600" />
                 {item.label}
               </span>
             );

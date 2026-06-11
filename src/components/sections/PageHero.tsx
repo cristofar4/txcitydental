@@ -1,45 +1,31 @@
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
-/** Shared dark aurora hero for interior pages, clears the floating header. */
+/** Shared dark hero for interior pages, clears the floating header. */
 export function PageHero({
   eyebrow,
   title,
   lead,
-  breadcrumb,
   children,
   className,
 }: {
   eyebrow?: string;
   title: ReactNode;
   lead?: ReactNode;
+  /** Accepted for backwards compatibility; no longer rendered. */
   breadcrumb?: string;
   children?: ReactNode;
   className?: string;
 }) {
   return (
-    <section className={cn("noise relative isolate overflow-hidden bg-aurora animate-aurora pb-20 pt-32 lg:pb-24 lg:pt-44", className)}>
+    <section className={cn("noise relative isolate overflow-hidden bg-aurora animate-aurora pb-20 pt-36 lg:pb-24 lg:pt-48", className)}>
       <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50 mask-fade-b" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-20 top-10 h-80 w-80 rounded-full bg-electric-500/25 blur-[110px] animate-glow" aria-hidden="true" />
       <div className="pointer-events-none absolute -left-20 top-28 h-80 w-80 rounded-full bg-iris-500/25 blur-[120px] animate-glow [animation-delay:1.5s]" aria-hidden="true" />
 
       <Container className="relative">
-        <Reveal y={0}>
-          <nav aria-label="Breadcrumb" className="mb-7 flex items-center justify-center gap-1.5 text-xs font-medium text-brand-100/60">
-            <Link href="/" className="transition-colors hover:text-white">Home</Link>
-            {breadcrumb && (
-              <>
-                <ChevronRight className="h-3.5 w-3.5" />
-                <span className="text-electric-300">{breadcrumb}</span>
-              </>
-            )}
-          </nav>
-        </Reveal>
-
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           {eyebrow && (
             <Reveal y={0}>

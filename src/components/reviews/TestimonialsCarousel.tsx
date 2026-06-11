@@ -2,11 +2,9 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, BadgeCheck } from "lucide-react";
 import { Stars } from "@/components/ui/Stars";
 import { MonogramAvatar } from "@/components/art/Portrait";
-import { Photo } from "@/components/media/Photo";
-import { getReviewerPhoto } from "@/lib/images";
 import type { Testimonial } from "@/lib/data/testimonials";
 
 export function TestimonialsCarousel({
@@ -63,17 +61,12 @@ export function TestimonialsCarousel({
                 &ldquo;{active.quote}&rdquo;
               </blockquote>
               <figcaption className="mt-7 flex items-center gap-4">
-                <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full shadow ring-2 ring-white">
-                  <Photo
-                    src={getReviewerPhoto(index)}
-                    alt={active.name}
-                    sizes="48px"
-                    className="h-full w-full rounded-full"
-                    fallback={<MonogramAvatar initials={active.initials} accent={active.accent} className="h-full w-full text-sm" />}
-                  />
-                </span>
+                <MonogramAvatar initials={active.initials} accent={active.accent} className="h-12 w-12 shrink-0 text-sm" />
                 <div>
-                  <div className="font-semibold text-ink">{active.name}</div>
+                  <div className="flex items-center gap-1.5 font-semibold text-ink">
+                    {active.name}
+                    <BadgeCheck className="h-4 w-4 text-brand-600" />
+                  </div>
                   <div className="text-sm text-slate-500">
                     {active.treatment} · {active.location}
                   </div>

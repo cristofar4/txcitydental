@@ -5,31 +5,31 @@
 /* ------------------------------------------------------------------ */
 
 @theme {
-  /* Brand azure, trustworthy, modern healthcare blue */
-  --color-brand-50: #eff6ff;
-  --color-brand-100: #dbeafe;
-  --color-brand-200: #bfdbfe;
-  --color-brand-300: #93c5fd;
-  --color-brand-400: #5ea5f6;
-  --color-brand-500: #3884ef;
-  --color-brand-600: #2167d6;
-  --color-brand-700: #1c52b0;
-  --color-brand-800: #1c478f;
-  --color-brand-900: #1c3d76;
-  --color-brand-950: #101f3f;
+  /* Brand, refined emerald (premium and fresh, not blue) */
+  --color-brand-50: #ecfdf5;
+  --color-brand-100: #d1fae5;
+  --color-brand-200: #a7f3d0;
+  --color-brand-300: #6ee7b7;
+  --color-brand-400: #34d399;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-800: #065f46;
+  --color-brand-900: #064e3b;
+  --color-brand-950: #052e23;
 
-  /* Electric accents for the futuristic glow language */
-  --color-electric-300: #7df3ff;
-  --color-electric-400: #38e2f5;
-  --color-electric-500: #16cfe6;
-  --color-iris-400: #8b7cff;
-  --color-iris-500: #6d5cf5;
-  --color-iris-600: #5a43e0;
+  /* Luminous mint + teal accents for glow and gradients */
+  --color-electric-300: #bef6e4;
+  --color-electric-400: #5eead4;
+  --color-electric-500: #2dd4bf;
+  --color-iris-400: #2bb3a3;
+  --color-iris-500: #0d9488;
+  --color-iris-600: #0f766e;
 
-  /* Deep space navies for dark sections, headings, footer */
-  --color-ink: #0a1834;
-  --color-midnight: #050d20;
-  --color-void: #03060f;
+  /* Deep forest charcoal for dark sections, headings, footer */
+  --color-ink: #0c1f1a;
+  --color-midnight: #07130f;
+  --color-void: #030a08;
 
   /* Champagne gold, restrained luxury accent */
   --color-gold-200: #f3e8c8;
@@ -38,17 +38,17 @@
   --color-gold-500: #c9a85f;
   --color-gold-600: #ad8c45;
 
-  /* Soft surfaces */
-  --color-mist: #f3f7ff;
-  --color-cloud: #fbfcff;
+  /* Warm ivory + soft sage surfaces (away from stark white) */
+  --color-mist: #eef4ee;
+  --color-cloud: #f8f8f3;
 
-  /* Luxury + neon shadows */
-  --shadow-soft: 0 2px 10px -3px rgb(10 24 52 / 0.08);
-  --shadow-card: 0 18px 40px -22px rgb(10 24 52 / 0.28);
-  --shadow-lift: 0 36px 70px -30px rgb(10 24 52 / 0.4);
-  --shadow-glow: 0 0 0 1px rgb(33 103 214 / 0.08), 0 24px 60px -24px rgb(33 103 214 / 0.5);
-  --shadow-neon: 0 0 0 1px rgb(56 226 245 / 0.18), 0 18px 60px -18px rgb(56 226 245 / 0.45);
-  --shadow-iris: 0 18px 60px -18px rgb(109 92 245 / 0.5);
+  /* Luxury + glow shadows */
+  --shadow-soft: 0 2px 10px -3px rgb(12 31 26 / 0.1);
+  --shadow-card: 0 18px 40px -22px rgb(12 31 26 / 0.3);
+  --shadow-lift: 0 36px 70px -30px rgb(12 31 26 / 0.42);
+  --shadow-glow: 0 0 0 1px rgb(5 150 105 / 0.1), 0 24px 60px -24px rgb(5 150 105 / 0.45);
+  --shadow-neon: 0 0 0 1px rgb(45 212 191 / 0.2), 0 18px 60px -18px rgb(45 212 191 / 0.45);
+  --shadow-iris: 0 18px 60px -18px rgb(13 148 136 / 0.5);
 
   /* Custom radii */
   --radius-4xl: 2rem;

@@ -39,6 +39,17 @@ export const photos = {
     "dr-kamran-shaikh": `${U}1622253692010-333f2da6031d`,
   } as Record<string, string>,
 
+  // Smile gallery photos (one real smile per case; the slider tints the
+  // "before" side duller and the "after" side brighter for a true transformation)
+  gallerySmiles: [
+    `${U}1606811971618-4486d14f3f99`,
+    `${U}1612349317150-e413f6a5b16d`,
+    `${U}1542596594-649edbc13630`,
+    `${U}1601933470928-c6ee329c2f31`,
+    `${U}1588776814546-1ffcf47267a5`,
+    `${U}1609840114035-3c981b782dfe`,
+  ],
+
   // Reviewer avatars (stable Unsplash portraits)
   reviewers: [
     `${U}1517841905240-472988babdf9`,
@@ -65,3 +76,4 @@ export const photos = {
 export const getDoctorPhoto = (slug: string) => photos.doctors[slug];
 export const getServicePhoto = (slug: string) => photos.services[slug];
 export const getReviewerPhoto = (i: number) => photos.reviewers[i % photos.reviewers.length];
+export const getGallerySmile = (i: number) => photos.gallerySmiles[i % photos.gallerySmiles.length];
